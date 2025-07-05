@@ -88,6 +88,7 @@ h2{
 	font-size: 1.6rem;
 }
 .texto-h2 h2{
+	display: inline-block; /*o fundo azul clarinho acompanha o texto do h2*/
 	background-color: #81d1ff;
 	padding: 15px 25px;
 	border-radius: 30px;
