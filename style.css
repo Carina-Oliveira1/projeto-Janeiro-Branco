@@ -64,10 +64,25 @@ main{
     background-color: #81d1ff;
     border-radius: 25px;
     padding: 30px;
-    min-height: 200px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.imgs img {
+    width: 100%;
+    display: block;
+}
+
+.dados {
+    color: #333;
+    text-align: left;
+}
+
+.dados p {
+    font-size: 1.1em;
+    line-height: 1.6;
 }
 
 
