@@ -29,7 +29,7 @@ a{
 }
 
 .a-menu:hover{
-	color: #C5CAE9;
+	color: #81d1ff;
 }
 
 
@@ -41,7 +41,7 @@ article{
 article p{
 	margin-bottom: 10px;
 	padding: 10px;
-	color: #000000;
+	color: #FFFFFF;
 }
 
 h1{
@@ -116,7 +116,7 @@ section{
 
 h3{
 	font-family: 'Merienda', normal;
-	color: #000000;
+	color: #FFFFFF;
 	font-size: 1.8rem;
 	margin-top: 13px;
 }
