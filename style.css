@@ -42,9 +42,34 @@ body{
     margin-right: 10px;
 }
 
-/*nav{
+main{
+	padding: 40px 20px;
+}
 
-}*/
+.img-direita {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+}
+
+.img-esquerda {
+    flex-direction: row-reverse; /*muda a direção da imagem*/
+}
+
+.imgs,
+.dados p{
+    flex: 1;
+    background-color: #81d1ff;
+    border-radius: 25px;
+    padding: 30px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
 a{
 	color: #FFFFFF;
