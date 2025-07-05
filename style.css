@@ -20,7 +20,7 @@ body{
 
 .home a {
     display: flex;
-    align-items: center;
+    align-items: right;
     
     background-color: #81d1ff;
     color: #FFFFFF;
