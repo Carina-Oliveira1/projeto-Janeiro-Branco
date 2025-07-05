@@ -37,6 +37,11 @@ body{
     background-color: #bfe0ec;
 }
 
+.logo img {
+    height: 80px;
+    margin-right: 20px;
+}
+
 /*nav{
 
 }*/
