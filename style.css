@@ -64,23 +64,25 @@ main{
 .bloco-dados-esquerda {
     display: flex;
     align-items: center;
-    gap: 30px; 
+    gap: 40px; 
     
     max-width: 900px;
-    margin: 0 auto 30px auto;
-
-    background-color: #81d1ff;
-    border-radius: 25px;
-    padding: 30px;
+    margin: 0 auto 40px auto;
 }
 
 .bloco-dados-direita {
     flex-direction: row-reverse; /* só inverte a ordem da imagem */
 }
 
-.imgs,
+.img {
+	flex: 1; 
+    background-color: #81d1ff;
+    border-radius: 25px;
+    padding: 10px;
+}
+
 .texto-container {
-    flex: 1; /* as imagens e os textos ocupam 50% do espaço */
+    flex: 1; /* os textos ocupam 50% do espaço */
 }
 
 .imgs img {
