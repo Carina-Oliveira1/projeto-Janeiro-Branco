@@ -48,7 +48,7 @@ main{
 
 .img-direita {
     display: flex;
-    align-items: center;
+    align-items: right;
     gap: 30px;
     max-width: 600px;
     margin: 0 auto 40px auto;
