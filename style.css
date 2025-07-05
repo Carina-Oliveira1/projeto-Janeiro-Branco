@@ -90,8 +90,8 @@ h2{
 .texto-h2 h2{
 	display: inline-block; /*o fundo azul clarinho acompanha o texto do h2*/
 	background-color: #81d1ff;
-	padding: 15px 25px;
-	border-radius: 30px;
+	padding: 15px 30px;
+	border-radius: 20px;
 }
 
 section{
