@@ -6,15 +6,41 @@ body{
 	background-color: #54c0ff;
 }
 
+.header {
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /*teste*/
+}
+
+.home ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.home ul li a {
+    display: flex;
+    align-items: center;
+    
+    background-color: #81d1ff;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+
+    font-size: 1.2em;
+}
+
+.home ul li a:hover {
+    background-color: #bfe0ec;
+}
+
 nav{
 	background-color: #303F9F;
 	padding: 10px;
 	text-align: right;
-}
-
-header, img{
-	width: 100%;
-	height: 420px;
 }
 
 a{
@@ -23,15 +49,6 @@ a{
 	text-decoration: none;
 	font-weight: bold;
 }
-
-.a-menu{
-	margin-right: 50px;
-}
-
-.a-menu:hover{
-	color: #81d1ff;
-}
-
 
 article{
 	width: 100%;
