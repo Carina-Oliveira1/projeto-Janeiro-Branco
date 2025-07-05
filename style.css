@@ -11,29 +11,28 @@ body{
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /*teste*/
 }
 
-.home ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.home {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.home ul li a {
-    display: flex;
+.home a {
+     display: flex;
     align-items: center;
     
     background-color: #81d1ff;
     color: #FFFFFF;
     text-decoration: none;
     padding: 12px 25px;
-    border-radius: 50px;
-
+    border-radius: 50px; /*o fundo redondinho*/
+    
     font-size: 1.2em;
+
+    transition: transform 0.2s ease-in-out;
 }
 
-.home ul li a:hover {
+.home a:hover {
     background-color: #bfe0ec;
 }
 
