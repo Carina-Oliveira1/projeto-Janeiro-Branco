@@ -70,7 +70,7 @@ main{
     margin: 0 auto 40px auto;
 }
 
-.bloco-dados-direita {
+.bloco-dados-esquerda.reverse {
     flex-direction: row-reverse; /* só inverte a ordem da imagem */
 }
 
