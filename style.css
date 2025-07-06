@@ -8,8 +8,7 @@ body{
 
 .header {
     padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /*teste*/
-	align-content: left;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* sombra debaixo do menu */
 }
 
 .home {
@@ -60,7 +59,7 @@ main{
     align-items: center;
     justify-content: center;
     padding: 60px; 
-    min-height: 80vh; 
+    min-height: 50vh; 
 }
 
 .titulo-container {
