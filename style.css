@@ -193,6 +193,8 @@ section{
 	display: grid;
 	grid-template-columns: 1fr 1fr; /* Cria duas colunas de tamanho igual */
 	gap: 20px; /* Adiciona um espaço entre os cards */
+	max-width: 960px;
+	margin: 40px auto;
 }
 
 .card{
@@ -203,6 +205,8 @@ section{
 	border-radius: 10px;
 	box-shadow: 0px 4px 8px #81d1ff;
 	transition: 0.2s;
+	display: flex;
+	flex-direction: column;
 }
 
 .card:hover{
@@ -213,6 +217,10 @@ section{
 	text-align: center;
 	/* display: flex;
 	justify-content: space-between; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-grow: 1;
 }
 
 .card img{
