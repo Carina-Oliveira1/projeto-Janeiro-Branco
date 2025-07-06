@@ -53,7 +53,7 @@ main{
 
 .dados > h2 {
     display: inline-block; 
-    background-color: #81d1ff; 
+    background-color: red; 
     color: #FFFFFF;
     padding: 15px 30px;
     border-radius: 20px;
@@ -75,9 +75,8 @@ main{
 }
 
 .imagens {
-	background-color: red !important;
 	flex: 1; 
-    
+    background-color: #81d1ff;
     border-radius: 25px;
     padding: 10px;
 }
