@@ -46,6 +46,15 @@ main{
 	padding: 40px 20px;
 }
 
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    padding: 40px; 
+    min-height: 90vh; 
+}
+
 .dados {
     padding: 40px 0;
     text-align: center;
