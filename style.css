@@ -106,6 +106,7 @@ main{
     background-color: #81d1ff;
     border-radius: 25px;
     padding: 10px;
+	box-shadow: 0px 4px 8px #81d1ff;
 }
 
 .texto-h2,
@@ -312,4 +313,41 @@ input[type="reset"]{
 	background-color: #212121;
 }
 
+.titulo {
+	max-width: 1000px;
+	margin: 60px auto;
+	display: flex;
+	align-items: center; /* Alinha o texto e a imagem verticalmente */
+	justify-content: center; /* Centraliza o conteúdo na tela */
+	gap: 50px; /* Cria um espaço entre o texto e a imagem */
+	padding: 40px; /* Adiciona um respiro nas laterais */
+	margin-top: 40px;
+}
 
+.titulo h1{
+	margin-bottom: 0;
+}
+
+.titulo-container {
+	flex-basis: 50%; /* Define que o container do texto ocupa 50% do espaço */
+}
+
+.imagens {
+	flex-basis: 50%; /* Define que o container da imagem ocupa 50% do espaço */
+}
+
+.imagens img {
+	width: 100%; /* Garante que a imagem não ultrapasse seu container */
+	max-width: 400px;
+	height: auto;
+}
+
+.titulo .imagens {
+	background-color: #81d1ff;  
+	border-radius: 50%;          
+	padding: 25px;               
+	box-shadow: 0px 4px 8px #81d1ff; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
