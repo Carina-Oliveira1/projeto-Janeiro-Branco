@@ -53,7 +53,7 @@ main{
 
 .dados > h2 {
     display: inline-block; 
-    background-color: #000000; 
+    /*background-color: #000000; */
     color: #FFFFFF;
     padding: 15px 30px;
     border-radius: 20px;
@@ -86,7 +86,7 @@ main{
 }
 
 .imagens img {
-    width: 100%; /* a imagem ocupa todo o espaço do bloquinho dela */
+    width: 70%; /* a imagem ocupa todo o espaço do bloquinho dela */
     display: block;
 }
 
