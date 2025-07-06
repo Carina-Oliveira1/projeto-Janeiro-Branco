@@ -61,7 +61,7 @@ main{
     margin-bottom: 90px; 
 }
 
-.bloco-dados-esquerda {
+.bloco-dados {
     display: flex;
     align-items: center;
     gap: 5%; 
@@ -70,7 +70,7 @@ main{
 	padding: 0 60px;
 }
 
-.bloco-dados-esquerda.reverse {
+.bloco-dados.reverse {
     flex-direction: row-reverse; /* só inverte a ordem da imagem e do texto*/
 }
 
