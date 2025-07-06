@@ -51,8 +51,19 @@ main{
     align-items: center;
     justify-content: center;
     gap: 5%;
-    padding: 40px; 
-    min-height: 90vh; 
+    padding: 60px; 
+    min-height: 80vh; 
+}
+
+.titulo-container {
+    flex: 1; 
+}
+
+.titulo-container > h1 {
+    color: white;
+    font-size: 3.8em;
+    line-height: 1.2;
+    margin: 0;
 }
 
 .dados {
@@ -90,6 +101,7 @@ main{
     padding: 10px;
 }
 
+.texto-h2,
 .texto-container {
     flex: 1; /* os textos ocupam 50% do espaço */
 }
@@ -139,11 +151,18 @@ h2{
 	color: #FFFFFF;
 	font-size: 1.6rem;
 }
-.texto-h2 h2{
+.texto-h2 > h2{
 	display: inline-block; /*o fundo azul clarinho acompanha o texto do h2*/
 	background-color: #81d1ff;
 	padding: 15px 30px;
 	border-radius: 20px;
+	margin-bottom: 50px;
+}
+
+.texto-h2 > p{
+	font-size: 1.7em;
+    line-height: 1.6;
+    margin: 0;
 }
 
 section{
