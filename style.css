@@ -8,7 +8,8 @@ body{
 
 .header {
     padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* sombra debaixo do menu */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /*teste*/
+	align-content: left;
 }
 
 .home {
@@ -27,26 +28,17 @@ body{
     padding: 12px 25px;
     border-radius: 50px; /*o fundo redondinho*/
     
-    font-size: 1.5em;
+    font-size: 1.2em;
 
     transition: transform 0.2s ease-in-out;
 }
 
-.home a:not(.logo):hover {/* o :not(.logo) tira o efeito de botão apenas da logo!!*/
+.home a:hover {
     background-color: #bfe0ec;
 }
 
-.logo{
-	margin-right: auto;
-}
-
-.logo > span{
-	margin-top: 20px;
-	font-size: 1.5em;
-}
-
 .logo img {
-    height: 100px;
+    height: 30px;
     margin-right: 10px;
 }
 
@@ -54,27 +46,8 @@ main{
 	padding: 40px 20px;
 }
 
-.titulo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px; 
-    min-height: 50vh; 
-}
-
-.titulo-container {
-    flex: 1; 
-}
-
-.titulo-container > h1 {
-    color: white;
-    font-size: 3.8em;
-    line-height: 1.2;
-    margin: 0;
-}
-
 .dados {
-    padding: 40px 0;
+    padding: 40px 20px;
     text-align: center;
 }
 
@@ -85,35 +58,34 @@ main{
     padding: 15px 30px;
     border-radius: 20px;
     font-size: 1.8em;
-    margin-bottom: 90px; 
+    margin-bottom: 40px; 
 }
 
-.bloco-dados {
+.bloco-dados-esquerda {
     display: flex;
     align-items: center;
-    gap: 5%; 
+    gap: 40px; 
     
-    margin-bottom: 50px;
-	padding: 0 60px;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
 }
 
-.bloco-dados.reverse {
-    flex-direction: row-reverse; /* só inverte a ordem da imagem e do texto*/
+.bloco-dados-esquerda.reverse {
+    flex-direction: row-reverse; /* só inverte a ordem da imagem */
 }
 
-.imagens {
-	flex: 0.7; 
+.img {
+	flex: 1; 
     background-color: #81d1ff;
     border-radius: 25px;
     padding: 10px;
 }
 
-.texto-h2,
 .texto-container {
     flex: 1; /* os textos ocupam 50% do espaço */
 }
 
-.imagens img {
+.imgs img {
     width: 100%; /* a imagem ocupa todo o espaço do bloquinho dela */
     display: block;
 }
@@ -121,7 +93,7 @@ main{
 .texto-container p {
     color: #FFFFFF;
     text-align: left;
-    font-size: 1.7em;
+    font-size: 1.1em;
     line-height: 1.6;
     margin: 0;
 }
@@ -158,18 +130,11 @@ h2{
 	color: #FFFFFF;
 	font-size: 1.6rem;
 }
-.texto-h2 > h2{
+.texto-h2 h2{
 	display: inline-block; /*o fundo azul clarinho acompanha o texto do h2*/
 	background-color: #81d1ff;
 	padding: 15px 30px;
 	border-radius: 20px;
-	margin-bottom: 50px;
-}
-
-.texto-h2 > p{
-	font-size: 1.7em;
-    line-height: 1.6;
-    margin: 0;
 }
 
 section{
