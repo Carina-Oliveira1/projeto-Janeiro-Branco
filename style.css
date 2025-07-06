@@ -164,12 +164,12 @@ section{
 	width: 25%;
 	padding: 10px;
 	border-radius: 10px;
-	box-shadow: 0px 4px 8px #BDBDBD;
+	box-shadow: 0px 4px 8px #81d1ff;
 	transition: 0.2s;
 }
 
 .card:hover{
-	box-shadow: 0px 8px 16px #BDBDBD;
+	box-shadow: 0px 8px 16px #FFFFFF;
 }
 .card-content{
 	padding: 10px; /*padding apenas no conteudo do card, sem alterar a imagem*/
