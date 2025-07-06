@@ -75,7 +75,7 @@ main{
 }
 
 .imagens {
-	flex: 1; 
+	flex: 0.7; 
     background-color: #81d1ff;
     border-radius: 25px;
     padding: 10px;
@@ -93,7 +93,7 @@ main{
 .texto-container p {
     color: #FFFFFF;
     text-align: left;
-    font-size: 1.1em;
+    font-size: 1.7em;
     line-height: 1.6;
     margin: 0;
 }
