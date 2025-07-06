@@ -86,7 +86,7 @@ main{
 }
 
 .imagens img {
-    width: 70%; /* a imagem ocupa todo o espaço do bloquinho dela */
+    width: 90%; /* a imagem ocupa todo o espaço do bloquinho dela */
     display: block;
 }
 
