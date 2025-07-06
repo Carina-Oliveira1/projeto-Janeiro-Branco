@@ -20,7 +20,7 @@ body{
 
 .home a {
     display: flex;
-    align-items: center;
+    align-items: right;
     
     background-color: #81d1ff;
     color: #FFFFFF;
@@ -38,13 +38,66 @@ body{
 }
 
 .logo img {
-    height: 80px;
-    margin-right: 20px;
+    height: 30px;
+    margin-right: 10px;
 }
 
-/*nav{
+main{
+	padding: 40px 20px;
+}
 
-}*/
+.dados {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.dados > h2 {
+    display: inline-block; 
+    background-color: #81d1ff; 
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-size: 1.8em;
+    margin-bottom: 40px; 
+}
+
+.bloco-dados-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 40px; 
+    
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+}
+
+.bloco-dados-direita {
+    flex-direction: row-reverse; /* só inverte a ordem da imagem */
+}
+
+.img {
+	flex: 1; 
+    background-color: #81d1ff;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.texto-container {
+    flex: 1; /* os textos ocupam 50% do espaço */
+}
+
+.imgs img {
+    width: 100%; /* a imagem ocupa todo o espaço do bloquinho dela */
+    display: block;
+}
+
+.texto-container p {
+    color: #FFFFFF;
+    text-align: left;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 0;
+}
+
 
 a{
 	color: #FFFFFF;
@@ -53,16 +106,6 @@ a{
 	font-weight: bold;
 }
 
-article{
-	width: 100%;
-	/*background-color: #FFFFFF;*/
-	box-sizing: border-box;
-}
-article p{
-	margin-bottom: 10px;
-	padding: 10px;
-	color: #FFFFFF;
-}
 
 h1{
 	font-family: 'Merienda', normal;
@@ -87,10 +130,11 @@ h2{
 	color: #FFFFFF;
 	font-size: 1.6rem;
 }
-h2 div{
+.texto-h2 h2{
+	display: inline-block; /*o fundo azul clarinho acompanha o texto do h2*/
 	background-color: #81d1ff;
-	border-radius: 50px;
-	padding: 12px 25px;
+	padding: 15px 30px;
+	border-radius: 20px;
 }
 
 section{
@@ -120,12 +164,12 @@ section{
 	width: 25%;
 	padding: 10px;
 	border-radius: 10px;
-	box-shadow: 0px 4px 8px #BDBDBD;
+	box-shadow: 0px 4px 8px #81d1ff;
 	transition: 0.2s;
 }
 
 .card:hover{
-	box-shadow: 0px 8px 16px #BDBDBD;
+	box-shadow: 0px 8px 16px #FFFFFF;
 }
 .card-content{
 	padding: 10px; /*padding apenas no conteudo do card, sem alterar a imagem*/
