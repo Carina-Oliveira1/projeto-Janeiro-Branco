@@ -249,6 +249,90 @@ h3{
 	margin-bottom: 10px;
 }*/
 
+.links-uteis {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.links-uteis h2 {
+    display: inline-block;
+    background-color: #81d1ff;
+    padding: 15px 30px;
+    border-radius: 50px; 
+    margin-bottom: 40px;
+    color: #FFFFFF; 
+}
+
+.accordion-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* espaçamento entre os itens */
+}
+
+.accordion-item {
+    padding: 0 20px; /* pra fazer a caixinha de texto ser menor que a caixinha de titulo */
+}
+
+.accordion-title {
+    background-color: #81d1ff;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 50px;
+    font-size: 1.6em;
+    font-family: 'Merienda', normal;
+    cursor: pointer; /* deixa o cursor como uma mãozinha */
+    list-style: none; /* tira o marcador padrão do summary */
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+/* Remove o marcador padrão no Chrome/Safari */
+.accordion-title::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-title:hover {
+    background-color: #bfe0ec;
+}
+
+.accordion-content {
+    background-color: #81d1ff;
+    color: #333;
+    text-align: justify;
+    padding: 30px;
+    border-radius: 25px;
+    margin-top: 15px;
+	margin-left: 20px;
+    margin-right: 20px;
+}
+
+.accordion-content p {
+    color: #585858;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-indent: -1; 
+}
+
+.site-button {
+    display: block; 
+    width: fit-content; /* o bloquinho do botão se encaixa na largura do conteúdo */
+    margin: 0 auto;
+	margin-bottom: 25px;
+
+    background-color: #54c0ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.site-button:hover {
+    background-color: #3da9e6;
+}
+
 footer{
 	background-color: #212121;
 	padding: 20px;
