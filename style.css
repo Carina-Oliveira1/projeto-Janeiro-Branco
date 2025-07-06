@@ -155,17 +155,28 @@ section{
 }*/
 
 #container{
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	max-width: 960px;
+	margin: 40px auto;
 }
 
 .card{
 	background-color: #81d1ff;
 	margin: 10px;
-	width: 25%;
+	/* width: 25%; */
 	padding: 10px;
 	border-radius: 10px;
 	box-shadow: 0px 4px 8px #81d1ff;
 	transition: 0.2s;
+	display: flex;
+	flex-direction: column;
+}
+
+.card img{
+	width: 100%;
+	height: auto;
 }
 
 .card:hover{
@@ -174,8 +185,12 @@ section{
 .card-content{
 	padding: 10px; /*padding apenas no conteudo do card, sem alterar a imagem*/
 	text-align: center;
+	/* display: flex;
+	justify-content: space-between; */
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: center;
+	flex-grow: 1;
 }
 
 .card-content p{
