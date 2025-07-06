@@ -75,8 +75,9 @@ main{
 }
 
 .imagens {
+	background-color: red !important;
 	flex: 1; 
-    background-color: #81d1ff;
+    
     border-radius: 25px;
     padding: 10px;
 }
