@@ -28,17 +28,26 @@ body{
     padding: 12px 25px;
     border-radius: 50px; /*o fundo redondinho*/
     
-    font-size: 1.2em;
+    font-size: 1.5em;
 
     transition: transform 0.2s ease-in-out;
 }
 
-.home a:hover {
+.home a:not(.logo):hover {/* o :not(.logo) tira o efeito de botão apenas da logo!!*/
     background-color: #bfe0ec;
 }
 
+.logo{
+	margin-right: auto;
+}
+
+.logo > span{
+	margin-top: 20px;
+	font-size: 1.5em;
+}
+
 .logo img {
-    height: 30px;
+    height: 100px;
     margin-right: 10px;
 }
 
@@ -50,7 +59,6 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5%;
     padding: 60px; 
     min-height: 80vh; 
 }
