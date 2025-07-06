@@ -8,8 +8,7 @@ body{
 
 .header {
     padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /*teste*/
-	align-content: left;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* sombra debaixo do menu */
 }
 
 .home {
@@ -33,13 +32,41 @@ body{
     transition: transform 0.2s ease-in-out;
 }
 
-.home a:hover {
+.home a:not(.logo):hover {/* o :not(.logo) tira o efeito de botão apenas da logo!!*/
     background-color: #bfe0ec;
 }
 
+.logo{
+	margin-right: auto;
+}
+
+.logo > span{
+	margin-top: 20px;
+	font-size: 1.5em;
+}
+
 .logo img {
-    height: 30px;
+    height: 100px;
     margin-right: 10px;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px; 
+    min-height: 50vh; 
+}
+
+.titulo-container {
+    flex: 1; 
+}
+
+.titulo-container > h1 {
+    color: white;
+    font-size: 3.8em;
+    line-height: 1.2;
+    margin: 0;
 }
 
 main{
@@ -47,7 +74,7 @@ main{
 }
 
 .dados {
-    padding: 40px 20px;
+    padding: 40px 0;
     text-align: center;
 }
 
@@ -58,29 +85,30 @@ main{
     padding: 15px 30px;
     border-radius: 20px;
     font-size: 1.8em;
-    margin-bottom: 40px; 
+    margin-bottom: 90px; 
 }
 
-.bloco-dados-esquerda {
+.bloco-dados {
     display: flex;
     align-items: center;
-    gap: 40px; 
+    gap: 5%; 
     
-    max-width: 900px;
-    margin: 0 auto 40px auto;
+    margin-bottom: 50px;
+	padding: 0 60px;
 }
 
-.bloco-dados-esquerda.reverse {
+.bloco-dados.reverse {
     flex-direction: row-reverse; /* só inverte a ordem da imagem */
 }
 
-.img {
-	flex: 1; 
+.imagens {
+	flex: 0.7; 
     background-color: #81d1ff;
     border-radius: 25px;
     padding: 10px;
 }
 
+.texto-h2,
 .texto-container {
     flex: 1; /* os textos ocupam 50% do espaço */
 }
