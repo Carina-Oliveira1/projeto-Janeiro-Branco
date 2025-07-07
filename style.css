@@ -403,4 +403,83 @@ input[type="reset"]{
 	background-color: #212121;
 }
 
+#forum-cta {
+	background-color: #FFFFFF; /* Fundo branco para destacar como um card */
+	padding: 50px;
+	margin: 60px auto; /* Adiciona espaçamento vertical e centraliza */
+	max-width: 960px; /* Limita a largura máxima */
+	border-radius: 25px; /* Bordas arredondadas */
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); /* Sombra para dar profundidade */
+}
 
+.forum-cta-container {
+	display: flex;
+	align-items: center; /* Centraliza os itens verticalmente */
+	gap: 50px; /* Espaço entre o texto e a imagem */
+}
+
+.forum-cta-text {
+	flex: 1; /* Permite que o texto ocupe o espaço disponível */
+}
+
+.forum-cta-image {
+	flex: 0.8; /* Define um tamanho proporcional para a imagem */
+}
+
+.forum-cta-image img {
+	width: 100%;
+	border-radius: 15px; /* Arredonda os cantos da imagem */
+}
+
+/* Ajuste no H2 para o novo fundo branco */
+.forum-cta-text h2 {
+	font-size: 2.2em;
+	color: #2f7299; /* Cor escura para contrastar com o fundo branco */
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+/* Ajuste no parágrafo para o novo fundo branco */
+.forum-cta-text p {
+	color: #585858; /* Cor de texto mais suave */
+	font-size: 1.3em;
+	text-align: left;
+	text-indent: 0;
+	line-height: 1.6;
+}
+
+/* Ajuste no botão para alinhamento à esquerda */
+.forum-cta-text .site-button {
+	margin-top: 30px;
+	display: inline-block; /* Garante que o botão não ocupe a largura toda */
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.forum-container {
+    text-align: center;
+    padding: 60px 40px;
+    min-height: 60vh;
+}
+
+.forum-container h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.forum-container p {
+    font-size: 1.5em;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    text-indent: 0;
+}
+
+.imagem-forum {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    background-color: #81d1ff;
+    border-radius: 25px;
+    padding: 10px;
+}
