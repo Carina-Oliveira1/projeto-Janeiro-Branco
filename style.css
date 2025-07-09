@@ -483,3 +483,92 @@ input[type="reset"]{
     border-radius: 25px;
     padding: 10px;
 }
+
+.forum-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.forum-container h1, .forum-container p {
+    text-align: center;
+    text-indent: 0;
+}
+
+/* Botão de Ação */
+.forum-actions {
+    display: flex;
+    justify-content: flex-end; /* Alinha o botão à direita */
+    margin-bottom: 25px;
+}
+
+/* Cabeçalho da lista (Tópico, Estatísticas, etc.) */
+.forum-list-header {
+    display: flex;
+    background-color: #2f7299; /* Cor escura para destaque */
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-family: 'Merienda', normal;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.header-titulo { flex: 3; } /* Ocupa mais espaço */
+.header-stats { flex: 1; text-align: center; }
+.header-last-post { flex: 1; text-align: right; }
+
+/* Estrutura de cada linha de tópico */
+.topic-item-row {
+    display: flex;
+    align-items: center;
+    background-color: #81d1ff; /* Reutiliza a cor clara dos cards */
+    color: #FFFFFF;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    transition: all 0.2s ease-in-out;
+}
+
+.topic-item-row:hover {
+    background-color: #FFFFFF; /* Fundo branco no hover */
+    color: #2f7299; /* Texto escuro no hover */
+    transform: scale(1.02); /* Efeito de zoom sutil */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.topic-item-row:hover a.topic-title {
+    color: #54c0ff; /* Muda a cor do link do título no hover */
+}
+
+/* Colunas dentro da linha */
+.topic-info { flex: 3; display: flex; align-items: center;}
+.topic-stats-group { flex: 1; text-align: center; }
+.topic-last-post { flex: 1; text-align: right; }
+
+/* Agrupamento de título e autor */
+.topic-title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.topic-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFFFFF; /* Cor padrão do link */
+    text-decoration: none;
+    font-family: 'Merienda', normal;
+}
+
+/* Estilização dos grupos de estatísticas e última postagem */
+.topic-stats-group, .topic-last-post {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.topic-stats-group strong {
+    font-size: 1.1em;
+}
