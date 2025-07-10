@@ -572,3 +572,83 @@ input[type="reset"]{
 .topic-stats-group strong {
     font-size: 1.1em;
 }
+
+/* código para responsividade, sempre deixe ele como último bloco do arquivo css!! eventualmente a gente vai atualizar ele conforme as novas seções que colocaremos no site*/
+@media (max-width: 768px) {
+
+    main {
+        padding: 20px 10px;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+
+
+    .home {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    .titulo {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 15px;
+        min-height: auto;
+        gap: 40px;
+    }
+
+    .titulo-container > h1 {
+        font-size: 2.2em;
+    }
+
+    .bloco-dados,
+    .bloco-dados.reverse {
+        flex-direction: column;
+        padding: 0 10px;
+        gap: 30px;
+    }
+    
+    .imagens {
+        flex: 1;
+    }
+
+    #container {
+        flex-direction: column; 
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 90%;
+        margin: 0;
+    }
+
+    .accordion-item {
+        padding: 0 5px;
+    }
+    
+    .accordion-content {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .accordion-title {
+        font-size: 1.3em;
+    }
+
+    .form {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    form {
+        width: 100%;
+    }
+
+}
