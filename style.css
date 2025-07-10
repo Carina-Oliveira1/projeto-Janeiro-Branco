@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
 
-*{margin:0; padding: 0;}
+*{margin:0; padding: 0; box-sizing: border-box;}
 
 body{
 	background-color: #54c0ff;
@@ -19,7 +19,7 @@ body{
 
 .home a {
     display: flex;
-    align-items: right;
+    align-items: center;
     
     background-color: #81d1ff;
     color: #FFFFFF;
@@ -312,7 +312,7 @@ h3{
     color: #585858;
     font-size: 1.1em;
     margin-bottom: 10px;
-    text-indent: -1; 
+    text-indent: 0; 
 }
 
 .site-button {
@@ -575,22 +575,18 @@ input[type="reset"]{
 
 /* código para responsividade, sempre deixe ele como último bloco do arquivo css!! eventualmente a gente vai atualizar ele conforme as novas seções que colocaremos no site*/
 @media (max-width: 768px) {
-
     main {
         padding: 20px 10px;
     }
-
     section {
         padding: 20px 10px;
     }
-
 
     .home {
         flex-direction: column;
         align-items: flex-start;
         gap: 25px;
     }
-
     .logo {
         margin-right: 0;
     }
@@ -602,9 +598,9 @@ input[type="reset"]{
         min-height: auto;
         gap: 40px;
     }
-
     .titulo-container > h1 {
         font-size: 2.2em;
+        text-align: center;
     }
 
     .bloco-dados,
@@ -614,30 +610,21 @@ input[type="reset"]{
         gap: 30px;
     }
     
-    .imagens {
-        flex: 1;
-    }
-
     #container {
-        flex-direction: column; 
-        align-items: center;
-        gap: 20px;
+        grid-template-columns: 1fr; 
     }
-
     .card {
-        width: 90%;
+        width: 100%; 
         margin: 0;
     }
 
     .accordion-item {
         padding: 0 5px;
     }
-    
     .accordion-content {
         margin-left: 5px;
         margin-right: 5px;
     }
-
     .accordion-title {
         font-size: 1.3em;
     }
@@ -646,9 +633,7 @@ input[type="reset"]{
         width: 90%;
         margin: 20px auto;
     }
-
     form {
         width: 100%;
     }
-
 }
