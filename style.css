@@ -240,15 +240,6 @@ h3{
 	margin-top: 13px;
 }
 
-/*#pag-login{
-
-}
-
-#pag-login p{
-	text-align: justify;
-	margin-bottom: 10px;
-}*/
-
 .links-uteis {
     text-align: center;
     padding: 40px 20px;
@@ -346,61 +337,6 @@ footer a{
 }
 footer a:hover{
 	color: #FFFFFF;
-}
-
-/*#pag-login{
-
-}
-
-#pag-login p{
-	text-align: center;
-	margin-bottom: 20px;
-}*/
-
-.form{
-	background-color: #FFFFFF;
-	margin: 10px;
-	width: 25%;
-	padding: 15px;
-	border-radius: 10px;
-	box-shadow: 0px 4px 8px #898da3;
-	margin-left: 700px;
-}
-
-form{
-	width: 400px;
-	margin: 0 auto;
-}
-
-input{
-	width: 100%;
-	height: 30px;
-	margin-bottom: 10px;
-	padding-left: 5px;
-	box-sizing: border-box;
-	border: 1px solid #C4C4C4;
-	color: #777777;
-}
-
-label, input{
-	font-family: 'Merienda', normal;
-	font-size: 1rem;
-}
-
-#botoes{
-	display: flex;
-}
-
-input[type="submit"], input[type="reset"]{
-	background-color: #303F9F;
-	margin: 20px;
-	color: #FFFFFF;
-	border: 0;
-	border-radius: 5px;
-}
-
-input[type="reset"]{
-	background-color: #212121;
 }
 
 #forum-cta {
@@ -572,6 +508,92 @@ input[type="reset"]{
 .topic-stats-group strong {
     font-size: 1.1em;
 }
+
+/* página de login */
+.login-body {
+    background-color: #54c0ff;
+    font-family: 'Merienda', normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    padding: 20px;
+}
+
+.login-page-container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.login-title-box {
+    background-color: #81d1ff;
+    color: white;
+    padding: 5px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.login-title-box h1 {
+    font-size: 1.8em;
+    color: white;
+    margin: 0;
+}
+
+.login-form-box {
+    background-color: #81d1ff;
+    padding: 40px;
+    border-radius: 25px;
+}
+
+.login-form-box label {
+    display: block;
+    text-align: left;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.login-form-box input[type="text"],
+.login-form-box input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.login-form-box input[type="submit"] {
+    background-color: white;
+    color: #54c0ff;
+    font-family: 'Merienda', sans-serif;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 60px;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: all 0.2s;
+}
+
+.login-form-box input[type="submit"]:hover {
+    transform: scale(1.05); /* efeito de aumentar um pouco ao passar o mouse */
+}
+
+.form{
+	background-color: #FFFFFF;
+	margin: 10px;
+	width: 25%;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 8px #898da3;
+	margin-left: 700px;
+}
+
 
 /* código para responsividade, sempre deixe ele como último bloco do arquivo css!! eventualmente a gente vai atualizar ele conforme as novas seções que colocaremos no site*/
 @media (max-width: 768px) {
