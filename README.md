@@ -1,4 +1,3 @@
-# projeto-Janeiro-Branco
 # Projeto Janeiro Branco 🤍
 
 ![Static Badge](https://img.shields.io/badge/Campanha-Janeiro%20Branco-ffffff?style=for-the-badge)
