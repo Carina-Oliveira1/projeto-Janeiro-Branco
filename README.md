@@ -121,3 +121,27 @@ agosto-lilas/
 ---
 Feito com 🤍 para apoiar uma causa importante.
 Projeto da disciplina Desenvolvimento de Sistema Web, do curso de Tecnologia em Desenvolvimento de Sistemas TDS | IFB/ Campus Brasília
+
+### Arquitetura do Projeto (MVC)
+
+```mermaid
+graph TD
+    A[Usuário] -->|Interage com| B(View);
+    B -->|Envia requisições| C(Controller);
+    C -->|Atualiza/Consulta| D(Model);
+    D -->|Retorna dados| C;
+    C -->|Atualiza| B;
+    B -->|Apresenta para| A;
+
+    subgraph "Projeto Janeiro Branco"
+        B(<b>View</b><br>HTML5, CSS3<br><i>templates/</i><br>- index.html<br>- forum.html<br>- login.html<br>- explore.html);
+        C(<b>Controller</b><br>Python 3, Django<br><i>gerador_site.py</i>);
+        D(<b>Model</b><br>SQLite 3<br><i>database.py</i><br>mensagens.db);
+    end
+
+    style B fill:#000000,stroke:#ffffff,stroke-width:2px
+    style C fill:#000000,stroke:#ffffff,stroke-width:2px
+    style D fill:#000000,stroke:#ffffff,stroke-width:2px
+```
+
+A imagem do modelo MVC do Projeto Janeiro Branco foi gerada usando a ferramenta de inteligência artificial: Gemini.
