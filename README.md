@@ -28,7 +28,6 @@ A aplicação foi construída utilizando um conjunto de tecnologias modernas, se
 * **Front-end (Interface do Usuário):**
     * `HTML5`: Para a estruturação semântica do conteúdo.
     * `CSS3`: Para a estilização, layout e design responsivo, seguindo a identidade visual do Agosto Lilás.
-    * `Python`: Para a interatividade e o carregamento dinâmico das mensagens no mural, consumindo a API do back-end.
 
 * **Back-end (Lógica do Servidor):**
     * `Python 3`: Linguagem principal para toda a lógica da aplicação.
