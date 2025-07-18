@@ -577,7 +577,7 @@ h3{
     font-size: 1.1em;
 }
 
-/* página de login 
+/* página de login */
 .login-body {
     background-color: #54c0ff;
     font-family: 'Merienda', normal;
@@ -649,9 +649,8 @@ h3{
 }
 
 .login-form-box input[type="submit"]:hover {
-    transform: scale(1.05); /* efeito de aumentar um pouco ao passar o mouse 
-}*/
-
+    transform: scale(1.05); /* efeito de aumentar um pouco ao passar o mouse */
+}
 
 .form{
 	background-color: #FFFFFF;
