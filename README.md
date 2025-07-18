@@ -19,6 +19,7 @@ O projeto conta com as seguintes funcionalidades:
 * **Forúm de Apoio:** Uma seção dinâmica onde são exibidas todas as mensagens de apoio enviadas pelos usuários, ordenadas da mais recente para a mais antiga.
 * **Formulário de Envio:** Um formulário simples e seguro para que qualquer pessoa possa enviar sua mensagem, com a opção de se identificar ou permanecer anônima.
 * **Sites e Aplicativos de Apoio:** Seção onde o usuário pode encontrar sites e aplicativos de apoio e produtividade.
+* **Recomendações dos usuários:** Espaço para usuários enviarem as próprias recomendações de sites e aplicativos voltados a saúde mental.
 
 
 ## 💻 Tecnologias Utilizadas
