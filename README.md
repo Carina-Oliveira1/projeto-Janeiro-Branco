@@ -20,6 +20,7 @@ O projeto conta com as seguintes funcionalidades:
 * **Formulário de Envio:** Um formulário simples e seguro para que qualquer pessoa possa enviar sua mensagem, com a opção de se identificar ou permanecer anônima.
 * **Sites e Aplicativos de Apoio:** Seção onde o usuário pode encontrar sites e aplicativos de apoio e produtividade.
 * **Recomendações dos usuários:** Espaço para usuários enviarem as próprias recomendações de sites e aplicativos voltados a saúde mental.
+* **Mapa de procura por atendimento piscológico:** Seção onde os usuários e visitantes poderão encontrar unidades de ajuda psicológica dentro da região de Brasília, podendo filtrar os resultados por região admnistrativa, preço e formato (presencial ou online). O usuário também poderá escolher se quer ser notificado caso uma nova unidade de atendimento seja adicionada na região administrativa de preferência.
 
 
 ## 💻 Tecnologias Utilizadas
