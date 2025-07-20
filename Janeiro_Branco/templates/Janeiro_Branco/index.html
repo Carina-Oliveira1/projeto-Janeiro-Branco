@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8">
@@ -6,13 +7,13 @@
 		<meta name="author" content="Carina Oliveira, Diego Costa"/>
 		<meta name="keywords" content="Janeiro Branco, Saude Mental, Saude, Mental, Janeiro, Branco"/>
 		<meta name="description" content="Site informativo sobre o Janeiro Branco, o mês da saúde mental"/>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="{% static "Janeiro_Branco/css/index.css" %}">
 	</head>
 	<body>
 		<header class="header">
     		<nav class="home">
         		<a href="#inicio" class="logo">
-               		<img src="img/fita.png" alt="Laço da campanha Janeiro Branco">
+               		<img src="{% static 'Janeiro_Branco/img/fita.png' %}" alt="Laço da campanha Janeiro Branco">
                 	<span>Janeiro Branco</span>
         		</a>
         		  <ul class="main-nav">
@@ -24,16 +25,18 @@
 								<li><a href="#prevencao">Prevenção</a></li>
 							</ul>
 						</li>
-						<li class="nav-item dropdown"> <a href="explore.html">Explore &#9662;</a> 
+						<li class="nav-item dropdown"> <a href="{% url 'explore' %}">Explore &#9662;</a> 
 							<ul class="dropdown-menu">
-								<li><a href="forum.html">Fórum</a></li>
-								<li><a href="onde-encontrar-ajuda.html">Onde encontrar ajuda</a></li>
-								<li><a href="aplicativos.html">Aplicativos</a></li>
-								<li><a href="entenda-mais.html">Entenda mais</a></li>
+								<li><a href="{% url 'forum' %}">Fórum</a></li>
+								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
+								<li><a href="{% url 'aplicativos' %}">Aplicativos</a></li>
+								<li><a href="{% url 'entenda_mais' %}">Entenda mais</a></li>
 							</ul>
 						</li>
-						<li class="nav-item"><a href="somos.html">Somos</a></li>
-						<li class="nav-item"><a href="login.html">Login</a></li>
+						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
+						<li class="nav-item"><a href="{% url 'login' %}">Login</a></li>
+                        <li class="nav-item"><a href="{% url 'cadastro' %}">Cadastre-se</a></li>
+                        <li class="nav-item"><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
 					</ul>
     		</nav>
 		</header>
@@ -47,13 +50,13 @@
 					</h1>
 				</div>
 				<div class="imagens">
-					<img src="img/titulo.png" alt="Duas mulheres conversando"> 
+					<img src="{% static 'Janeiro_Branco/img/titulo.png' %}" alt="Duas mulheres conversando"> 
 				</div>
 			</section>
 
 			<section id="o-que-e" class="bloco-dados">
 				<div class="imagens">
-					<img src="img/oquee.png" alt="Psicologa conversando com uma paciente"> 
+					<img src="{% static 'Janeiro_Branco/img/oquee.png' %}" alt="Psicologa conversando com uma paciente"> 
 				</div>
 				<div class="texto-h2">
 					<h2>O QUE É O JANEIRO BRANCO?</h2>
@@ -63,7 +66,7 @@
 
 			<section id="importancia" class="bloco-dados reverse">
 				<div class="imagens">
-					<img src="img/importancia.png" alt="Uma mulher segurando um gato"> 
+					<img src="{% static 'Janeiro_Branco/img/importancia.png' %}" alt="Uma mulher segurando um gato"> 
 				</div>
 				<div class="texto-h2">
 					<h2>IMPORTÂNCIA</h2>
@@ -77,7 +80,7 @@
 
 				<div class="bloco-dados">
 					<div class="imagens">
-						<img src="img/dados1.png" alt="Uma menina chorando"> 
+						<img src="{% static 'Janeiro_Branco/img/dados1.png' %}" alt="Uma menina chorando"> 
 					</div>
 					<div class="texto-container">
 						<p>Segundo o Global Mind Project (pesquisa que divulga dados anuais sobre o bem-estar no planeta) o Brasil enfrenta desafios significativos em saúde emocional pós-pandemia. Dentre os entrevistados, 34% relatam angústia, enquanto 38% estão em processo de recuperação, com jovens abaixo de 35 anos sendo os mais afetados (fonte: <a href="mentalstateoftheworld.report" target="_blank">mentalstateoftheworld.report</a>).</p>
@@ -86,7 +89,7 @@
 
 				<div class="bloco-dados reverse">
 					<div class="imagens">
-						<img src="img/dados2.png" alt="Mulher ansiosa"> 
+						<img src="{% static 'Janeiro_Branco/img/dados2.png' %}" alt="Mulher ansiosa"> 
 					</div>
 					<div class="texto-container">
 						<p><strong>Prevalência de Transtornos Mentais:</strong> Na América Latina, o Brasil é o país com maior prevalência de depressão, além de ser o segundo país com maior prevalência nas Américas, segundo a Organização Mundial da Saúde/OMS (fonte:<a href="https://www.gov.br/saude/pt-br/assuntos/noticias/2022/setembro/na-america-latina-brasil-e-o-pais-com-maior-prevalencia-de-depressao" target="_blank"> Ministério da Saúde e OMS</a>). Em relação a transtornos de ansiedade, O Brasil é o líder no mundo de acordo com uma pesquisa da Organização Mundial da Saúde (OMS) divulgada em 2019. Novos dados divulgados em 2023 apontam que 26,8% dos brasileiros receberam diagnóstico médico de ansiedade (fonte: <a href="https://www12.senado.leg.br/noticias/arquivos/2024/08/30/relatorio_covitel_2023.pdf" target="_blank">Covitel</a> 2023)</p>
@@ -95,7 +98,7 @@
 
 				<div class="bloco-dados">
 					<div class="imagens">
-						<img src="img/dados3.png" alt="Homem e mulher abraçando uma mulher jovem"> 
+						<img src="{% static 'Janeiro_Branco/img/dados3.png' %}" alt="Homem e mulher abraçando uma mulher jovem"> 
 					</div>
 					<div class="texto-container">
 						<p><strong>Autolesão e Suicídio no Brasil:</strong> A taxa de suicídio entre jovens cresceu 6% ao ano no Brasil entre os anos de 2011 e 2022. Já as taxas de notificações por autolesões na faixa etária de 10 a 24 aumentaram 29% a cada ano nesse mesmo período. O número foi maior que na população em geral, cuja taxa de suicídio teve crescimento médio de 3,7% ao ano e a de autolesão 21% ao ano, neste mesmo período. Entre os anos 2000 e 2019, o número de casos no Brasil subiu 43% (fonte: <a href="https://fiocruz.br/noticia/2024/02/estudo-aponta-que-taxas-de-suicidio-e-autolesoes-aumentam-no-brasil" target="_blank">Fiocruz</a>)</p>
@@ -111,69 +114,37 @@
 			</div>
 
                 <div id="container">
-                	<div class="card">
-                	    <img src="img/prevencao1.png" alt="Um sono regulado pode ajudar">
-                	    <div class="card-content">
-                	        <h3>Rotina Saudável</h3>
-                	        <p>Ter uma rotina saudável e bem-estruturada possibilita viver com mais tranquilidade. Esse conforto emocional que a rotina traz reduz o estresse e aumenta a sensação de controle da pessoa sobre a própria vida.</p>
-                	    </div>
-                	</div>
+                <div class="card">
+                    <img src="{% static 'Janeiro_Branco/img/prevencao1.png' %}" alt="Um sono regulado pode ajudar">
+                    <div class="card-content">
+                        <h3>Rotina Saudável</h3>
+                        <p>Ter uma rotina saudável e bem-estruturada possibilita viver com mais tranquilidade. Esse conforto emocional que a rotina traz reduz o estresse e aumenta a sensação de controle da pessoa sobre a própria vida.</p>
+                    </div>
+                </div>
 
-                	<div class="card">
-                	    <img src="img/prevencao2.png" alt="Atividades físicas regulares pode melhorar a saúde mental">
-                	    <div class="card-content">
-                	        <h3>Atividade Fisíca</h3>
-                	        <p>Atividade física e saúde mental andam juntas. Colocar o corpo em atividade é um dos fatores individuais que se pode modificar e atuar para melhorar a saúde mental.</p>
-                	    </div>
-                	</div>
+                <div class="card">
+                    <img src="{% static 'Janeiro_Branco/img/prevencao2.png' %}" alt="Atividades físicas regulares pode melhorar a saúde mental">
+                    <div class="card-content">
+                        <h3>Atividade Fisíca</h3>
+                        <p>Atividade física e saúde mental andam juntas. Colocar o corpo em atividade é um dos fatores individuais que se pode modificar e atuar para melhorar a saúde mental.</p>
+                    </div>
+                </div>
 
-                	<div class="card">
-    					<img src="img/prevencao3.png" alt="Prato com alimentos saudáveis">
-    					<div class="card-content">
-    					    <h3>Cuide da alimentação</h3>
-    					    <p>Sua alimentação impacta diretamente sua saúde mental. Dê preferência a alimentos naturais e evite o consumo excessivo de açúcar, ultraprocessados e álcool.</p>
-    					</div>
-					</div>
+                <div class="card">
+                    <img src="{% static 'Janeiro_Branco/img/prevencao3.png' %}" alt="">
+                    <div class="card-content">
+                        <h3>Cuide da alimentação</h3>
+                        <p>As recomendações aqui são as mesmas de quem busca uma alimentação saudável para a mente e o corpo: reduzir o consumo de alimentos excessivamente gordurosos e ultraprocessados e de açúcares. Procure priorizar refeições saudáveis, com carnes magras, grãos integrais, frutas e vegetais. Evite uso excessivo de cafeína e álcool. </p>
+                    </div>
+                </div>
 
-                	<div class="card">
-    					<img src="img/prevencao4.png" alt="Grupo de amigos se apoiando">
-    					<div class="card-content">
-    					    <h3>Relações Saudáveis</h3>
-    					    <p>Priorize relações que te fazem bem e reforce laços com pessoas que te apoiam. Afaste-se de dinâmicas e comportamentos que possam gerar sofrimento.</p>
-    					</div>
-					</div>
-
-					<div class="card">
-            		<img src="img/prevencao5.png" alt="Mulher praticando autocuidado se abraçando">
-            		<div class="card-content">
-            		    <h3>Pratique o Autocuidado</h3>
-            		    <p>Reserve um tempo para si. Atividades que promovem bem-estar, como ler ou descansar, são essenciais para recarregar as energias e cuidar da sua saúde mental.</p>
-            		</div>
-        			</div>
-				
-        			<div class="card">
-        			    <img src="img/prevencao6.png" alt="Mulher meditando em posição de lótus">
-        			    <div class="card-content">
-        			        <h3>Atenção Plena</h3>
-        			        <p>Pratique a meditação. Essas técnicas ajudam a focar no presente, reduzir a ansiedade e a desenvolver uma maior consciência sobre seus pensamentos e sentimentos.</p>
-        			    </div>
-        			</div>
-				
-        			<div class="card">
-        			    <img src="img/prevencao7.png" alt="Homem com laptop planejando metas e objetivos">
-        			    <div class="card-content">
-        			        <h3>Estabeleça Metas</h3>
-        			        <p>Definir objetivos alcançáveis pode proporcionar um senso de propósito. Divida grandes metas em pequenos passos para tornar o processo mais gratificante.</p>
-        			    </div>
-        			</div>
-				
-        			<div class="card">
-        			    <img src="img/prevencao8.png" alt="Psicóloga conversando com paciente em sessão de terapia">
-        			    <div class="card-content">
-        			        <h3>Procure Ajuda</h3>
-        			        <p>Não hesite em procurar a ajuda de um psicólogo. Falar com um profissional pode fornecer ferramentas e estratégias para lidar com os desafios do dia a dia.</p>
-        			    </div>
-        			</div>
+                <div class="card">
+                    <img src="{% static 'Janeiro_Branco/img/prevencao4.png' %}" alt="Haeundae Beach">
+                    <div class="card-content">
+                        <h3>Relações Saúdaveis</h3>
+                        <p>Perceba suas relações cotidianas, priorize relacionamentos saudáveis e reforce laços sociais com pessoas que te fazem se sentir bem. Tenha atenção a comportamentos nos relacionamentos que possam trazer sofrimento.</p>
+                    </div>
+                </div>
                 </div>
 		</section>
 
@@ -182,10 +153,10 @@
     		    <div class="forum-cta-text">
     		        <h2>Participe da Nossa Comunidade</h2>
     		        <p>Conecte-se, compartilhe histórias e encontre apoio em nosso novo fórum. Um espaço seguro e acolhedor para falar sobre saúde mental e bem-estar.</p>
-    		        <a href="forum.html" class="site-button">Acessar o Fórum</a>
+    		        <a href="{% url 'forum' %}" class="site-button">Acessar o Fórum</a>
     		    </div>
     		    <div class="forum-cta-image">
-    		        <img src="img/titulo.png" alt="Duas mulheres conversando em um ambiente acolhedor">
+    		        <img src="{% static 'Janeiro_Branco/img/titulo.png' %}" alt="Duas mulheres conversando em um ambiente acolhedor">
     		    </div>
     		</div>
 		</section>

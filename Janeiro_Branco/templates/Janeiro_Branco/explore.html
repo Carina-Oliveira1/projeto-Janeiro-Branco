@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Explore</title>
+		<meta name="author" content="Carina Oliveira, Diego Costa"/>
+		<meta name="keywords" content="Janeiro Branco, Saude Mental, Saude, Mental, Janeiro, Branco"/>
+		<meta name="description" content="Site informativo sobre o Janeiro Branco, o mês da saúde mental"/>
+		<link rel="stylesheet" href="{% static "Janeiro_Branco/css/index.css" %}">
+	</head>
+	<body>
+		<header class="header">
+    		<nav class="home">
+        		<a href="{% url 'index' %}#inicio" class="logo">
+               		<img src="{% static 'Janeiro_Branco/img/fita.png' %}" alt="Laço da campanha Janeiro Branco">
+                	<span>Janeiro Branco</span>
+        		</a>
+        		<ul class="main-nav">
+						<li class="nav-item dropdown"> <a href="#">Saiba Mais &#9662;</a> 
+							<ul class="dropdown-menu">
+								<li><a href="{% url 'index' %}#o-que-e">O que é</a></li>
+								<li><a href="{% url 'index' %}#importancia">Importância</a></li>
+								<li><a href="{% url 'index' %}#dados">Dados</a></li>
+								<li><a href="{% url 'index' %}#prevencao">Prevenção</a></li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown"> <a href="{% url 'explore' %}">Explore &#9662;</a> 
+							<ul class="dropdown-menu">
+								<li><a href="{% url 'forum' %}">Fórum</a></li>
+								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
+								<li><a href="{% url 'aplicativos' %}">Aplicativos</a></li>
+								<li><a href="{% url 'entenda_mais' %}">Entenda mais</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
+						<li class="nav-item"><a href="{% url 'login' %}">Login</a></li>
+                        <li class="nav-item"><a href="{% url 'cadastro' %}">Cadastre-se</a></li>
+					</ul>
+    		</nav>
+		</header>
+
+		<main class="page-container">
+        <div class="explore-grid">
+
+            <div class="explore-card">
+                <div class="card-top">
+                    <img src="img/forum.png" alt="Ícone de Fórum">
+                    <a href="forum.html"><h3>FÓRUM</h3></a>
+                </div>
+                <div class="card-bottom">
+                    <p>Espaço seguro e acolhedor para que pessoas possam deixar mensagens de apoio e solidariedade de forma anônima.</p>
+                </div>
+            </div>
+
+            <div class="explore-card">
+                <div class="card-top">
+                    <img src="img/onde-procurar-ajuda.png" alt="Ícone de Onde Encontrar Ajuda">
+                    <a href="onde-encontrar-ajuda.html"><h3>ONDE ENCONTRAR AJUDA</h3></a>
+                </div>
+                <div class="card-bottom">
+                    <p>Saiba onde encontrar apoio e ajuda profissional.</p>
+                </div>
+            </div>
+
+            <div class="explore-card">
+                <div class="card-top">
+                    <img src="img/aplicativos.png" alt="Ícone de Aplicativos">
+                    <a href="aplicativos.html"><h3>APLICATIVOS</h3></a>
+                </div>
+                <div class="card-bottom">
+                    <p>Espaço seguro e acolhedor para que pessoas possam deixar mensagens de apoio e solidariedade de forma anônima.</p>
+                </div>
+            </div>
+
+            <div class="explore-card">
+                <div class="card-top">
+                    <img src="img/entenda-mais.png" alt="Ícone de Entenda Mais">
+                    <a href="entenda-mais.html"><h3>ENTENDA MAIS</h3></a>
+                </div>
+                <div class="card-bottom">
+                    <p>Espaço seguro e acolhedor para que pessoas possam deixar mensagens de apoio e solidariedade de forma anônima.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+		<footer>
+		<p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Santos</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
+		</footer>
+	</body>
+</html>

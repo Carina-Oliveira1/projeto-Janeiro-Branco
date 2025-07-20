@@ -274,22 +274,22 @@ section{
 
 #container{
 	display: grid;
-    /* Cria colunas que têm no mínimo 260px, mas se adaptam ao espaço. 
-       Isso cria a grade de 4 colunas em telas largas sem esticar demais. */
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    max-width: 1200px; /* Definimos uma largura máxima para o conjunto */
-    margin: 40px auto;
+	grid-template-columns: 1fr 1fr; /* Cria duas colunas de tamanho igual */
+	gap: 20px; /* Adiciona um espaço entre os cards */
+	max-width: 960px;
+	margin: 40px auto;
 }
 
 .card{
 	background-color: #81d1ff;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px #81d1ff;
-    transition: 0.2s;
-    display: flex;
-    flex-direction: column;
+	margin: 10px;
+	/* width: 25%; */
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 8px #81d1ff;
+	transition: 0.2s;
+	display: flex;
+	flex-direction: column;
 }
 
 .card:hover{

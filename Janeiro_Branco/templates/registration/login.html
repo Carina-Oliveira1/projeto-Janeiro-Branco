@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<meta name="author" content="Carina Oliveira, Diego Costa"/>
+		<meta name="keywords" content="Janeiro Branco, Saude Mental, Saude, Mental, Janeiro, Branco"/>
+		<meta name="description" content="Site informativo sobre o Janeiro Branco, o mês da saúde mental"/>
+		<link rel="stylesheet" href="{% static "Janeiro_Branco/css/index.css" %}">
+	</head>
+	<body>
+		<header class="header">
+    		<nav class="home">
+        		<a href="{% url 'index' %}#inicio" class="logo">
+               		<img src="{% static 'Janeiro_Branco/img/fita.png' %}" alt="Laço da campanha Janeiro Branco">
+                	<span>Janeiro Branco</span>
+        		</a>
+        		<ul class="main-nav">
+						<li class="nav-item dropdown"> <a href="#">Saiba Mais &#9662;</a> 
+							<ul class="dropdown-menu">
+								<li><a href="{% url 'index' %}#o-que-e">O que é</a></li>
+								<li><a href="{% url 'index' %}#importancia">Importância</a></li>
+								<li><a href="{% url 'index' %}#dados">Dados</a></li>
+								<li><a href="{% url 'index' %}#prevencao">Prevenção</a></li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown"> <a href="{% url 'explore' %}">Explore &#9662;</a> 
+							<ul class="dropdown-menu">
+								<li><a href="{% url 'forum' %}">Fórum</a></li>
+								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
+								<li><a href="{% url 'aplicativos' %}">Aplicativos</a></li>
+								<li><a href="{% url 'entenda_mais' %}">Entenda mais</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
+						<li class="nav-item"><a href="{% url 'login' %}">Login</a></li>
+                        <li class="nav-item"><a href="{% url 'cadastro' %}">Cadastre-se</a></li>
+					</ul>
+    		</nav>
+		</header>
+
+        <div class="login-body">
+            <div class="login-page-container">
+            
+                <div class="login-title-box">
+                <h2>LOGIN</h2>
+                </div>
+
+                <div class="login-form-box">
+                    <form>
+                        <label for="username">NOME DE USUÁRIO:</label>
+                        <input type="text" name="username" id="username" />
+
+                        <label for="password">SENHA:</label>
+                        <input type="password" name="password" id="password" />
+                        
+                        <input type="submit" value="ENTRAR">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <h1>Login</h1>
+            {% if form.errors %}
+            <p>Seu usuário ou senha estão incorretos.</p>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Entrar</button>
+            </form>
+
+        <footer>
+		    <p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Santos</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
+	    </footer>
+	</body>
+</html>

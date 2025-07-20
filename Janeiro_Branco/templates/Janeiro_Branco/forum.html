@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Fórum - Janeiro Branco</title>
+		<meta name="author" content="Carina Oliveira, Diego Costa"/>
+		<meta name="keywords" content="Janeiro Branco, Saude Mental, Saude, Mental, Janeiro, Branco, Fórum"/>
+		<meta name="description" content="Fórum da comunidade Janeiro Branco para troca de experiências e apoio."/>
+		<link rel="stylesheet" href="{% static "Janeiro_Branco/css/index.css" %}">
+	</head>
+	<body>
+		<header class="header">
+			<nav class="home">
+                <a href="{% url 'index' %}#inicio" class="logo">
+						<img src="{% static 'Janeiro_Branco/img/fita.png' %}" alt="Laço da campanha Janeiro Branco">
+                        <span>Janeiro Branco</span>
+                </a>
+                <ul class="main-nav">
+						<li class="nav-item dropdown"> <a href="#">Saiba Mais &#9662;</a> 
+							<ul class="dropdown-menu">
+								<li><a href="{% url 'index' %}#o-que-e">O que é</a></li>
+								<li><a href="{% url 'index' %}#importancia">Importância</a></li>
+								<li><a href="{% url 'index' %}#dados">Dados</a></li>
+								<li><a href="{% url 'index' %}#prevencao">Prevenção</a></li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown"> <a href="{% url 'explore' %}">Explore &#9662;</a> 
+							<ul class="dropdown-menu">
+								<li><a href="{% url 'forum' %}">Fórum</a></li>
+								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
+								<li><a href="{% url 'aplicativos' %}">Aplicativos</a></li>
+								<li><a href="{% url 'entenda_mais' %}">Entenda mais</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
+						<li class="nav-item"><a href="{% url 'login' %}">Login</a></li>
+                        <li class="nav-item"><a href="{% url 'cadastro' %}">Cadastre-se</a></li>
+					</ul>
+        </nav>
+		</header>
+
+		<main>
+    		<section id="forum-principal" class="forum-container">
+    		    <h1>Nosso Fórum</h1>
+    		    <p>Um espaço seguro e acolhedor para compartilhar suas experiências, encontrar apoio e conversar sobre saúde mental e bem-estar.</p>
+			
+    		    <div class="forum-actions">
+    		        <a href="#novo-topico" class="site-button">Criar Novo Tópico</a>
+    		    </div>
+			
+    		    <div class="forum-list-header">
+    		        <div class="header-titulo">Tópico</div>
+    		        <div class="header-stats">Estatísticas</div>
+    		        <div class="header-last-post">Última Atividade</div>
+    		    </div>
+			
+    		    <div class="forum-topic-list">
+    		        <div class="topic-item-row">
+    		            <div class="topic-info">
+    		                <div class="topic-title-group">
+    		                    <a href="#" class="topic-title">Dicas para lidar com a ansiedade no dia a dia</a>
+    		                    <span class="topic-author">por Ana L.</span>
+    		                </div>
+    		            </div>
+    		            <div class="topic-stats-group">
+    		                <span><strong>15</strong> Respostas</span>
+    		                <span><strong>120</strong> Views</span>
+    		            </div>
+    		            <div class="topic-last-post">
+    		                <span>Hoje, 15:30</span>
+    		                <span class="last-post-author">por Mariana P.</span>
+    		            </div>
+    		        </div>
+				
+    		        <div class="topic-item-row">
+    		            <div class="topic-info">
+    		                <div class="topic-title-group">
+    		                    <a href="#" class="topic-title">Como encontrar um bom profissional de saúde mental?</a>
+    		                    <span class="topic-author">por Carlos S.</span>
+    		                </div>
+    		            </div>
+    		            <div class="topic-stats-group">
+    		                <span><strong>8</strong> Respostas</span>
+    		                <span><strong>95</strong> Views</span>
+    		            </div>
+    		            <div class="topic-last-post">
+    		                <span>Ontem, 20:17</span>
+    		                <span class="last-post-author">por Rafael G.</span>
+    		            </div>
+    		        </div>
+				
+    		        <div class="topic-item-row">
+    		            <div class="topic-info">
+    		                <div class="topic-title-group">
+    		                    <a href="#" class="topic-title">A importância de manter uma rotina saudável</a>
+    		                    <span class="topic-author">por Juliana M.</span>
+    		                </div>
+    		            </div>
+    		            <div class="topic-stats-group">
+    		                <span><strong>22</strong> Respostas</span>
+    		                <span><strong>210</strong> Views</span>
+    		            </div>
+    		            <div class="topic-last-post">
+    		                <span>Ontem, 11:45</span>
+    		                <span class="last-post-author">por Juliana M.</span>
+    		            </div>
+    		        </div>
+    		    </div>
+    		</section>
+
+            <h1>Fórum de Apoio</h1>
+
+            <!--ARRUMAR ISSO AQUI AINDA-->
+            {% if user.is_authenticated %}
+            <h3>Deixe sua mensagem</h3>
+            <form method="POST" action="{% url 'criar_mensagem' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+            {% else %}
+            <p>Você precisa <a href="{% url 'login' %}">fazer login</a> para deixar uma mensagem.</p>
+            {% endif %}
+
+<hr>
+		</main>
+
+		<footer>
+		<p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Santos</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
+		</footer>
+	</body>
+</html>
