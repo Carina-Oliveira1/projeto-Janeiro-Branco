@@ -1,4 +1,4 @@
-# Projeto Janeiro Branco 🤍
+a# Projeto Janeiro Branco 🤍
 
 ![Campanha](https://img.shields.io/badge/Campanha-Janeiro%20Branco-ffffff?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python)
@@ -81,21 +81,53 @@ Antes de começar, certifique-se de que você tem os seguintes softwares instala
     pip install -r requirements.txt
     ```
 
-5.  **Configure o Banco de Dados**
-    *Abra o PostgreSQL e crie um novo banco de dados (ex: janeiro_branco_db).
-    ```bash
-    python database.py
-    ```
+5.  **Configure o Banco de Dados (PostgreSQL)**
+
+    A aplicação precisa de um banco de dados PostgreSQL para funcionar.
+
+    * **5.1. Instale o PostgreSQL:** Se você ainda não o tem, [baixe e instale o PostgreSQL](https://www.postgresql.org/download/) em sua máquina. Durante a instalação, um programa chamado **pgAdmin** também         será instalado, que é uma interface gráfica para gerenciar seus bancos de dados.
+
+    * **5.2. Crie o Banco de Dados:**
+        1.  Abra o **pgAdmin**.
+        2.  Conecte-se ao seu servidor local (a senha é a que você definiu durante a instalação do PostgreSQL).
+        3.  Na árvore lateral, clique com o botão direito em **"Databases"** -> **"Create"** -> **"Database..."**.
+        4.  No campo **"Database"**, digite o nome `janeiro_db` e clique em **"Save"**.
+
+    * **5.3. Configure as Variáveis de Ambiente:** Para conectar o Django ao seu banco de dados de forma segura, usamos um arquivo `.env`.
+        1.  Na raiz do projeto (na mesma pasta do `manage.py`), crie um arquivo chamado `.env`.
+        2.  Copie e cole o conteúdo abaixo nesse arquivo, **substituindo os valores** pelos da sua configuração local do PostgreSQL:
+            ```env
+            # Arquivo .env
+        
+            # Configuração do Banco de Dados
+            DB_NAME=janeiro_db
+            DB_USER=postgres
+            DB_PASSWORD=sua_senha_do_postgres_aqui
+            DB_HOST=localhost
+            DB_PORT=5432
+        
+            # Chave secreta do Django
+            SECRET_KEY='django-insecure-chave-aleatoria-para-desenvolvimento'
+            
+            # Modo de Debug
+            DEBUG=True
+            ```
+            > **Importante:** O `DB_USER` geralmente é `postgres` por padrão. O `DB_PASSWORD` é a senha que você criou ao instalar o PostgreSQL.
+
+    * **5.4. Crie as Tabelas no Banco:** Com o banco criado e as variáveis de ambiente configuradas, execute o comando que cria todas as tabelas do projeto.
+        ```bash
+        python manage.py migrate
+        ```
 
 6.  **Inicie o servidor Django:**
     Agora, sua aplicação está pronta para ser executada!
     ```bash
-    python gerador_site.py
+    python manage.py runserver
     ```
 
 7.  **Acesse a aplicação:**
     Abra seu navegador de internet e acesse a seguinte URL:
-    [http://127.0.0.1:5000](http://127.0.0.1:5000)
+    [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 Pronto! A aplicação estará rodando em sua máquina local.
 
