@@ -1,9 +1,9 @@
 # Projeto Janeiro Branco 🤍
 
-![Static Badge](https://img.shields.io/badge/Campanha-Janeiro%20Branco-ffffff?style=for-the-badge)
+![Campanha](https://img.shields.io/badge/Campanha-Janeiro%20Branco-ffffff?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python)
 ![Django](https://img.shields.io/badge/Django-5.2.4-ffffff?style=for-the-badge&logo=django&color=%230C4B33)
-![SQLite](https://img.shields.io/badge/SQLite-3-blue?style=for-the-badge&logo=sqlite)
+![PostgreSQL](https://img.shields.io/badge/17.5%2B-699eca?style=for-the-badge&logo=postgresql&label=PostgreSQL)
 
 Este projeto é uma aplicação web completa desenvolvida em apoio à campanha **Janeiro Branco**, o mês de conscientização da saúde mental. A plataforma busca ser um canal de informação e, ao mesmo tempo, um espaço seguro e acolhedor para que pessoas possam deixar mensagens de apoio e solidariedade de forma anônima.
 
@@ -36,7 +36,7 @@ A aplicação foi construída utilizando um conjunto de tecnologias modernas, se
     * `Django`: Framework de código aberto para criar o servidor web.
 
 * **Banco de Dados:**
-    * `SQLite 3`: Um banco de dados relacional baseado em arquivo, ideal para projetos de pequeno e médio porte pela sua simplicidade e por não necessitar de um servidor dedicado.
+    * `PostgreSQL`: : Sistema de gerenciamento de banco de dados objeto-relacional de código aberto, robusto e escalável.
 
 ## 🚀 Como Executar o Projeto Localmente
 
@@ -48,15 +48,15 @@ Antes de começar, certifique-se de que você tem os seguintes softwares instala
 
 * [Python 3.8+](https://www.python.org/downloads/)
 * [Git](https://git-scm.com/) (para clonar o repositório)
+* [PostgreSQL](https://www.postgresql.org/download/)
 
 ### Passo a Passo para a Instalação
 
 1.  **Clone o repositório:**
     Abra seu terminal e execute o seguinte comando para criar uma cópia local do projeto.
     ```bash
-    git clone [https://github.com/Carina-Oliveira1/projeto-Janeiro-Branco](https://github.com/SEU-USUARIO/projeto-Janeiro-Branco)
+    git clone https://github.com/Carina-Oliveira1/projeto-Janeiro-Branco
     ```
-    *Substitua `SEU-USUARIO` pelo seu nome de usuário do GitHub.*
 
 2.  **Acesse a pasta do projeto:**
     ```bash
@@ -81,8 +81,8 @@ Antes de começar, certifique-se de que você tem os seguintes softwares instala
     pip install -r requirements.txt
     ```
 
-5.  **Inicialize o Banco de Dados:**
-    Este comando executa o script `database.py` para criar o arquivo `mensagens.db` e a tabela correspondente. **Execute este passo apenas uma vez.**
+5.  **Configure o Banco de Dados**
+    *Abra o PostgreSQL e crie um novo banco de dados (ex: janeiro_branco_db).
     ```bash
     python database.py
     ```
@@ -102,14 +102,14 @@ Pronto! A aplicação estará rodando em sua máquina local.
 ## 📂 Estrutura de Pastas
 
 ```
-agosto-lilas/
+Janeiro_Branco/
 |-- gerador_site.py             # Arquivo principal do Django (Back-end)
 |-- database.py        # Script para criar o banco de dados
 |-- static/            # Pasta para arquivos estáticos
 |   |-- css/
-|   |   `-- style.css  # Folha de estilos
-|   `-- js/
-|       `-- script.js  # Código JavaScript
+|   |   `-- index.css  # Folha de estilos
+|   |-- img/
+|   |   `-- index.css  # Folha de estilos
 |-- templates/         # Pasta para os templates HTML
 |   |-- index.html     # Página inicial com o formulário
 |   `-- forum.html     # Página para exibir as mensagens
