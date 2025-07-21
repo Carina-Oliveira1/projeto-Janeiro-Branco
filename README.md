@@ -177,22 +177,23 @@ Projeto da disciplina Desenvolvimento de Sistema Web, do curso de Tecnologia em 
 
 ```mermaid
 graph TD
-    A[Usuário] -->|Interage com| B(View);
-    B -->|Envia requisições| C(Controller);
-    C -->|Atualiza/Consulta| D(Model);
+    A[Usuário] -->|Navega para URL| B(Django URL Routing);
+    B -->|Chama a View correspondente| C(View);
+    C -->|Consulta/Atualiza dados| D(Model);
     D -->|Retorna dados| C;
-    C -->|Atualiza| B;
-    B -->|Apresenta para| A;
+    C -->|Renderiza o Template com os dados| E(Template);
+    E -->|Gera HTML| C;
+    C -->|Retorna resposta HTTP| A;
 
     subgraph "Projeto Janeiro Branco"
-        B(<b>View</b><br>HTML5, CSS3<br><i>templates/</i><br>- index.html<br>- forum.html<br>- login.html<br>- explore.html);
-        C(<b>Controller</b><br>Python 3, Django<br><i>gerador_site.py</i>);
-        D(<b>Model</b><br>SQLite 3<br><i>database.py</i><br>mensagens.db);
+        E["Template (Apresentação)<br>HTML5, CSS3<br>templates/Janeiro_Branco/"];
+        C["View (Lógica/Controller)<br>Python 3, Django<br>Janeiro_Branco/views.py"];
+        D["Model (Dados)<br>PostgreSQL<br>Janeiro_Branco/models.py"];
     end
 
-    style B fill:#000000,stroke:#ffffff,stroke-width:2px
-    style C fill:#000000,stroke:#ffffff,stroke-width:2px
-    style D fill:#000000,stroke:#ffffff,stroke-width:2px
+    style E fill:#0C4B33,stroke:#ffffff,stroke-width:2px,color:#fff
+    style C fill:#0C4B33,stroke:#ffffff,stroke-width:2px,color:#fff
+    style D fill:#0C4B33,stroke:#ffffff,stroke-width:2px,color:#fff
 ```
 
 A imagem do modelo MVC do Projeto Janeiro Branco foi gerada usando a ferramenta de inteligência artificial: Gemini.
