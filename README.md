@@ -36,7 +36,7 @@ A aplicação foi construída utilizando um conjunto de tecnologias modernas, se
     * `Django`: Framework de código aberto para criar o servidor web.
 
 * **Banco de Dados:**
-    * `PostgreSQL`: : Sistema de gerenciamento de banco de dados objeto-relacional de código aberto. Robusto e escalável.
+    * `PostgreSQL`: : Sistema de gerenciamento de banco de dados objeto-relacional de código aberto, robusto e escalável.
 
 ## 🚀 Como Executar o Projeto Localmente
 
@@ -48,15 +48,15 @@ Antes de começar, certifique-se de que você tem os seguintes softwares instala
 
 * [Python 3.8+](https://www.python.org/downloads/)
 * [Git](https://git-scm.com/) (para clonar o repositório)
+* [PostgreSQL](https://www.postgresql.org/download/)
 
 ### Passo a Passo para a Instalação
 
 1.  **Clone o repositório:**
     Abra seu terminal e execute o seguinte comando para criar uma cópia local do projeto.
     ```bash
-    git clone [https://github.com/Carina-Oliveira1/projeto-Janeiro-Branco](https://github.com/SEU-USUARIO/projeto-Janeiro-Branco)
+    git clone https://github.com/Carina-Oliveira1/projeto-Janeiro-Branco
     ```
-    *Substitua `SEU-USUARIO` pelo seu nome de usuário do GitHub.*
 
 2.  **Acesse a pasta do projeto:**
     ```bash
@@ -81,8 +81,8 @@ Antes de começar, certifique-se de que você tem os seguintes softwares instala
     pip install -r requirements.txt
     ```
 
-5.  **Inicialize o Banco de Dados:**
-    Este comando executa o script `database.py` para criar o arquivo `mensagens.db` e a tabela correspondente. **Execute este passo apenas uma vez.**
+5.  **Configure o Banco de Dados**
+    *Abra o PostgreSQL e crie um novo banco de dados (ex: janeiro_branco_db).
     ```bash
     python database.py
     ```
