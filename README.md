@@ -102,22 +102,39 @@ Pronto! A aplicação estará rodando em sua máquina local.
 ## 📂 Estrutura de Pastas
 
 ```
-Janeiro_Branco/
-|-- gerador_site.py             # Arquivo principal do Django (Back-end)
-|-- database.py        # Script para criar o banco de dados
-|-- static/            # Pasta para arquivos estáticos
-|   |-- css/
-|   |   `-- index.css  # Folha de estilos
-|   |-- img/
-|   |   `-- index.css  # Folha de estilos
-|-- templates/         # Pasta para os templates HTML
-|   |-- index.html     # Página inicial com o formulário
-|   `-- forum.html     # Página para exibir as mensagens
-|   `-- login.html     # Página para realizar o login
-|   `-- explore.html   # Página para explorar conteúdos complementares
-|-- .gitignore         # Arquivo para ignorar arquivos no Git
-|-- requirements.txt   # Dependências do Python
-`-- README.md          # Este arquivo de documentação
+Projeto_Janeiro_Branco/
+├── manage.py                    # Script principal de gerenciamento do Django
+├── project/                     # Pasta de configuração do projeto
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py              # Configurações do projeto
+│   ├── urls.py                  # URLs globais
+│   └── wsgi.py
+├── janeiro_branco/              # Aplicativo principal do projeto
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py                  # URLs do aplicativo
+│   ├── views.py
+│   ├── migrations/              # Migrações do banco de dados
+│   ├── static/
+│   │   └── janeiro_branco/
+│   │       ├── css/
+│   │       │   └── index.css
+│   │       └── img/
+│   │           └── (todas as imagens do app)
+│   └── templates/
+│       ├── janeiro_branco/
+│       │   └── (todos os templates .html do app)
+│       └── registration/
+│           └── login.html
+├── venv/                        # Pasta do ambiente virtual Python
+├── .gitignore                   # Arquivo para ignorar arquivos no Git
+├── requirements.txt             # Lista de dependências do projeto
+└── README.md                    # Este arquivo de documentação
 ```
 
 ---
