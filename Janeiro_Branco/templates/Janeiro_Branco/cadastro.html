@@ -29,25 +29,26 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{% url 'forum' %}">Fórum</a></li>
                                 <li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
-                                <li><a href="{% url 'aplicativos' %}">Aplicativos</a></li>
+                                <li><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
                                 <li><a href="{% url 'entenda_mais' %}">Entenda mais</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
                         <li class="nav-item"><a href="{% url 'login' %}">Login</a></li>
-                        <li class="nav-item"><a href="{% url 'cadastro' %}">Cadastre-se</a></li>
                 </ul>
             </nav>
         </header>
+
+        <main class="page-container">
 
         <div class="login-body">
             <div class="login-page-container">
             
                 <div class="login-title-box">
-                <h2>Cadastro</h2>
+                <h2>CADASTRO</h2>
                 </div>
 
-                <div class="login-form-box">
+                <div class="styled-form-container">
                     <form method="POST">
                         
                         <!--medida de segurança obrigatória do django, protege do ataque chamado de cross site request forgery-->
@@ -66,10 +67,16 @@
                         {{ form.as_p }}
                         
                         <input type="submit" value="CADASTRAR">
+
+                        <div class="redirect-link">
+                            <p>Já possui uma conta? <a href="{% url 'login' %}">Faça login</a></p>
+                        </div>
                     </form>
                 </div>
                 </div>
         </div>
+
+    </main>
 
         <footer>
             <p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Santos</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>

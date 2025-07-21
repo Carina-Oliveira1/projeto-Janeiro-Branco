@@ -29,13 +29,12 @@
 							<ul class="dropdown-menu">
 								<li><a href="{% url 'forum' %}">Fórum</a></li>
 								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
-								<li><a href="{% url 'aplicativos' %}">Aplicativos</a></li>
+								<li><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
 								<li><a href="{% url 'entenda_mais' %}">Entenda mais</a></li>
 							</ul>
 						</li>
 						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
 						<li class="nav-item"><a href="{% url 'login' %}">Login</a></li>
-                        <li class="nav-item"><a href="{% url 'cadastro' %}">Cadastre-se</a></li>
 					</ul>
         </nav>
 		</header>
@@ -55,75 +54,64 @@
     		        <div class="header-last-post">Última Atividade</div>
     		    </div>
 			
-    		    <div class="forum-topic-list">
-    		        <div class="topic-item-row">
-    		            <div class="topic-info">
-    		                <div class="topic-title-group">
-    		                    <a href="#" class="topic-title">Dicas para lidar com a ansiedade no dia a dia</a>
-    		                    <span class="topic-author">por Ana L.</span>
-    		                </div>
-    		            </div>
-    		            <div class="topic-stats-group">
-    		                <span><strong>15</strong> Respostas</span>
-    		                <span><strong>120</strong> Views</span>
-    		            </div>
-    		            <div class="topic-last-post">
-    		                <span>Hoje, 15:30</span>
-    		                <span class="last-post-author">por Mariana P.</span>
-    		            </div>
-    		        </div>
-				
-    		        <div class="topic-item-row">
-    		            <div class="topic-info">
-    		                <div class="topic-title-group">
-    		                    <a href="#" class="topic-title">Como encontrar um bom profissional de saúde mental?</a>
-    		                    <span class="topic-author">por Carlos S.</span>
-    		                </div>
-    		            </div>
-    		            <div class="topic-stats-group">
-    		                <span><strong>8</strong> Respostas</span>
-    		                <span><strong>95</strong> Views</span>
-    		            </div>
-    		            <div class="topic-last-post">
-    		                <span>Ontem, 20:17</span>
-    		                <span class="last-post-author">por Rafael G.</span>
-    		            </div>
-    		        </div>
-				
-    		        <div class="topic-item-row">
-    		            <div class="topic-info">
-    		                <div class="topic-title-group">
-    		                    <a href="#" class="topic-title">A importância de manter uma rotina saudável</a>
-    		                    <span class="topic-author">por Juliana M.</span>
-    		                </div>
-    		            </div>
-    		            <div class="topic-stats-group">
-    		                <span><strong>22</strong> Respostas</span>
-    		                <span><strong>210</strong> Views</span>
-    		            </div>
-    		            <div class="topic-last-post">
-    		                <span>Ontem, 11:45</span>
-    		                <span class="last-post-author">por Juliana M.</span>
-    		            </div>
-    		        </div>
-    		    </div>
-    		</section>
+				{% for mensagem in lista_de_mensagens %}
+					<div class="topic-item-row">
+						<div class="topic-info">
+							<div class="topic-title-group">
+								<a href="#" class="topic-title">{{ mensagem.conteudo }}</a>
+								<span class="topic-author">
+									por 
+									{% if mensagem.exibir_anonimo %}
+										Anônimo
+									{% else %}
+										{{ mensagem.autor.username }}
+									{% endif %}
+								</span>
+							</div>
+						</div>
 
-            <h1>Fórum de Apoio</h1>
+						<div class="topic-stats-group">
+							<span>&nbsp;</span>
+						</div>
 
-            <!--ARRUMAR ISSO AQUI AINDA-->
-            {% if user.is_authenticated %}
-            <h3>Deixe sua mensagem</h3>
-            <form method="POST" action="{% url 'criar_mensagem' %}">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Enviar Mensagem</button>
-            </form>
-            {% else %}
-            <p>Você precisa <a href="{% url 'login' %}">fazer login</a> para deixar uma mensagem.</p>
-            {% endif %}
+						<div class="topic-last-post">
+							<span>{{ mensagem.data_criacao|date:"d/m/Y, H:i" }}</span>
+							<span class="last-post-author">
+								por 
+								{% if mensagem.exibir_anonimo %}
+									Anônimo
+								{% else %}
+									{{ mensagem.autor.username }}
+								{% endif %}
+							</span>
+							{% if user == mensagem.autor %}
+							<form action="{% url 'deletar_mensagem' mensagem.id %}" method="POST" style="display:inline; margin-top: 5px;">
+								{% csrf_token %}
+								<button type="submit" class="delete-button">Excluir</button>
+							</form>
+						{% endif %}
+						</div>
+					</div>
+				{% empty %}
+					<div class="topic-item-row">
+						<p>Ainda não há tópicos. Seja o primeiro a criar um!</p>
+					</div>
+				{% endfor %}
 
-<hr>
+			<section id="novo-topico" class="form-section">
+				{% if user.is_authenticated %}
+					<h3>Deixe sua mensagem</h3>
+					<form method="POST" action="{% url 'criar_mensagem' %}" class="styled-form">
+						{% csrf_token %}
+						{{ form.as_p }}
+						<button type="submit" class="site-button">Enviar Mensagem</button>
+					</form>
+				{% else %}
+					<div class="login-prompt">
+        				<p>Você precisa <a href="{% url 'login' %}">fazer login</a> para deixar uma mensagem.</p>
+    				</div>
+				{% endif %}
+			</section>
 		</main>
 
 		<footer>

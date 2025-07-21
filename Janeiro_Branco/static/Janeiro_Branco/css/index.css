@@ -2,8 +2,20 @@
 
 *{margin:0; padding: 0; box-sizing: border-box;}
 
-body{
-	background-color: #54c0ff;
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0; 
+    min-height: 100%; 
+    display: flex;
+    flex-direction: column;
+    background-color: #54c0ff;
+}
+
+main {
+    flex-grow: 1;
 }
 
 .header {
@@ -259,25 +271,14 @@ section{
 	padding: 20px;
 }
 
-/*#pag-oquee{
-	
-}
-
-#pag-destinos h2{
-	color: #FFFFFF;
-}
-
-#pag-destinos p{
-	color: #000000;
-	margin-top: 20px;
-}*/
-
 #container{
-	display: grid;
-	grid-template-columns: 1fr 1fr; /* Cria duas colunas de tamanho igual */
-	gap: 20px; /* Adiciona um espaço entre os cards */
-	max-width: 960px;
-	margin: 40px auto;
+    display: grid;
+	/* Cria colunas que têm no mínimo 260px, mas se adaptam ao espaço. 
+       Isso cria a grade de 4 colunas em telas largas sem esticar demais. */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1200px; /* Definimos uma largura máxima para o conjunto */
+    margin: 40px auto;
 }
 
 .card{
@@ -285,11 +286,11 @@ section{
 	margin: 10px;
 	/* width: 25%; */
 	padding: 10px;
-	border-radius: 10px;
-	box-shadow: 0px 4px 8px #81d1ff;
-	transition: 0.2s;
-	display: flex;
-	flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px #81d1ff;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover{
@@ -395,7 +396,7 @@ h3{
     margin: 0 auto;
 	margin-bottom: 25px;
 
-    background-color: #54c0ff;
+    background-color: #81d1ff;
     color: white;
     padding: 10px 20px;
     border-radius: 50px;
@@ -404,7 +405,7 @@ h3{
 }
 
 .site-button:hover {
-    background-color: #3da9e6;
+    background-color: #2f7299;
 }
 
 #forum-cta {
@@ -536,7 +537,7 @@ h3{
 }
 
 .topic-item-row:hover {
-    background-color: #FFFFFF; /* Fundo branco no hover */
+    background-color: #2f7299; /* Fundo branco no hover */
     color: #2f7299; /* Texto escuro no hover */
     transform: scale(1.02); /* Efeito de zoom sutil */
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
@@ -577,79 +578,62 @@ h3{
     font-size: 1.1em;
 }
 
-/* página de login */
-.login-body {
-    background-color: #54c0ff;
-    font-family: 'Merienda', normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 75vh;
-    padding: 20px;
-}
-
-.login-page-container {
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-}
-
-.login-title-box {
-    background-color: #81d1ff;
-    color: white;
-    padding: 5px 30px;
-    border-radius: 50px;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.login-title-box h2 {
-    font-size: 2.5em;
-    color: white;
-    margin: 0;
-}
-
-.login-form-box {
-    background-color: #81d1ff;
+/* estilo para a seção do formulário no fórum */
+.form-section {
+    background-color: #FFFFFF;
     padding: 40px;
-    border-radius: 25px;
-}
-
-.login-form-box label {
-    display: block;
-    text-align: left;
-    color: white;
-    margin-bottom: 5px;
-    font-size: 1.1em;
-}
-
-.login-form-box input[type="text"],
-.login-form-box input[type="password"] {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 50px;
-    margin-bottom: 20px;
-    font-size: 1em;
-}
-
-.login-form-box input[type="submit"] {
-    background-color: white;
-    color: #54c0ff;
-    font-family: 'Merienda', sans-serif;
-    font-weight: bold;
-    font-size: 1.3em;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 50px;
-    padding: 12px 60px;
-    cursor: pointer;
     margin-top: 40px;
-    transition: all 0.2s;
+    border-radius: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.login-form-box input[type="submit"]:hover {
-    transform: scale(1.05); /* efeito de aumentar um pouco ao passar o mouse */
+.form-section h3 {
+    color: #2f7299;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* estilo para o formulário gerado pelo Django */
+.styled-form p {
+    margin-bottom: 15px;
+}
+.styled-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+.styled-form input, .styled-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* estilo para o botão de excluir */
+.delete-button {
+    background-color: #ff7675;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+.delete-button:hover {
+    background-color: #d63031;
+}
+
+.form-section .login-prompt {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.form-section .login-prompt p {
+    font-size: 1.2em;
+    color: #585858;
 }
 
 .form{
@@ -721,6 +705,198 @@ h3{
     text-indent: 0;
 }
 
+.redirect-link {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.redirect-link p {
+    font-size: 1.2em;
+    color: #e0f7fa; 
+    text-indent: 0;
+    text-align: center;
+}
+
+.redirect-link a {
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.login-body {
+    font-family: 'Merienda', normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.login-page-container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.login-title-box {
+    background-color: #81d1ff; 
+    color: #54c0ff;
+    padding: 5px 40px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: -25px;
+    position: relative;
+    z-index: 2;
+}
+
+.login-title-box h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin: 0;
+}
+
+.login-page-container .styled-form-container {
+    background-color: #81d1ff;
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+}
+
+.redirect-link a:hover {
+    color: #c5fdff;
+}
+
+.page-container > h1 {
+    text-align: center;
+    font-size: 2.5em;
+    font-style: normal;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.styled-form-container {
+    background-color: #81d1ff;
+    padding: 40px;
+    border-radius: 25px;
+    color: white;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.styled-form-container h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.styled-form-container form p {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.styled-form-container form label {
+    display: block;
+    color: white;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+    font-family: 'Merienda', normal;
+    font-weight: bold;
+}
+
+.styled-form-container input[type="text"],
+.styled-form-container input[type="email"],
+.styled-form-container input[type="password"],
+.styled-form-container input[type="url"],
+.styled-form-container textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 50px;
+    font-size: 1em;
+    color: #333;
+    font-family: 'Merienda', sans-serif;
+}
+
+.styled-form-container textarea {
+    border-radius: 20px;
+    min-height: 120px;
+}
+
+.styled-form-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.styled-form-container label[for="id_creditar_autor"],
+.styled-form-container label[for="id_exibir_anonimo"] {
+    text-align: center;
+}
+
+.styled-form-container input[type="submit"],
+.styled-form-container button {
+    background-color: white;
+    color: #54c0ff;
+    font-family: 'Merienda', normal;
+    font-weight: bold;
+    font-size: 1.8em;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 60px;
+    cursor: pointer;
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.2s;
+}
+
+/* alvo é o parágrafo <p> que tem a classe 'checkbox-group' */
+.styled-form-container .checkbox-group {
+    text-align: center; 
+}
+
+/* alvo são a label e o input DENTRO do parágrafo centralizado */
+.styled-form-container .checkbox-group label,
+.styled-form-container .checkbox-group input {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/* aumenta o tamanho da caixinha do checkbox */
+.styled-form-container .checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title-capsule-blue {
+    display: inline-block;
+    background-color: #81d1ff;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 50px;
+    font-family: 'Merienda', normal;
+    font-size: 2.5em;
+    font-style: normal;
+    border: none;
+}
+
+.title-capsule-blue h1, 
+.title-capsule-blue h2 {
+    margin: 0;
+    font-size: 1em;
+    color: inherit;
+}
+
 footer{
 	background-color: #212121;
 	padding: 20px;
@@ -731,6 +907,7 @@ footer p{
 }
 footer a{
 	color: #C5CAE9;
+    text-decoration: underline;
 }
 footer a:hover{
 	color: #FFFFFF;

@@ -29,76 +29,119 @@
 							<ul class="dropdown-menu">
 								<li><a href="{% url 'forum' %}">Fórum</a></li>
 								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
-								<li><a href="{% url 'aplicativos' %}">Aplicativos</a></li>
+								<li><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
 								<li><a href="{% url 'entenda_mais' %}">Entenda mais</a></li>
 							</ul>
 						</li>
 						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
 						<li class="nav-item"><a href="{% url 'login' %}">Login</a></li>
-                        <li class="nav-item"><a href="{% url 'cadastro' %}">Cadastre-se</a></li>
-                        <li class="nav-item"><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
 					</ul>
         </nav>
 		</header>
 
+     <main class="page-container">
 
-        <h1>Recomendações da Comunidade</h1>
-<p>Sites, aplicativos e ferramentas que podem ajudar na sua jornada de saúde mental.</p>
+      <div class="title-container">
+          <div class="title-capsule-blue">
+              <h1>Recomendações</h1>
+          </div>
+      </div>
+      <p style="text-align: center; max-width: 800px; margin: 20px auto 40px auto;">
+        Ferramentas que podem ajudar na sua jornada de saúde mental, sugeridos por nossos usuários.
+      </p>
 
-{% if user.is_authenticated %}
-  <h3>Envie sua recomendação</h3>
-  <form method="POST" action="{% url 'criar_recomendacao' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Enviar Recomendação</button>
-  </form>
-{% else %}
-  <p>Você precisa <a href="{% url 'login' %}">fazer login</a> para enviar uma recomendação.</p>
-{% endif %}
+      <section class="styled-form-container" id="nova-recomendacao">
+        <form method="POST" action="{% url 'criar_recomendacao' %}" class="styled-form">
+          {% csrf_token %}
 
-<hr>
-<h3>Recomendações Recentes</h3>
-{% for rec in lista_de_recomendacoes %}
-  <div>
-    <h4><a href="{{ rec.url }}" target="_blank">{{ rec.nome_site_app }}</a></h4>
-    <p>{{ rec.descricao }}</p>
-    <small>
-      Enviado
-      {% if rec.creditar_autor %}
-        por <strong>{{ rec.autor.username }}</strong>
-      {% endif %}
-      em {{ rec.data_envio }}
-    </small>
-  </div>
-  <hr>
-{% empty %}
-  <p>Ainda não há recomendações.</p>
-{% endfor %}
+          <p>
+              {{ form.nome_site_app.label_tag }}
+              {{ form.nome_site_app }}
+          </p>
 
-        <hr>
-        <h3>Recomendações Recentes</h3>
+          <p>
+              {{ form.url.label_tag }}
+              {{ form.url }}
+          </p>
+          
+          <p>
+              {{ form.descricao.label_tag }}
+              {{ form.descricao }}
+          </p>
 
+          <p class="checkbox-group">
+              {{ form.creditar_autor }} {{ form.creditar_autor.label_tag }} </p>
+
+          <button type="submit" class="site-button">Enviar Recomendação</button>
+        </form>
+      </section>
+
+      <h2 style="text-align: center; margin-top: 60px; color: white; font-size: 2.5em;">Recomendações em Destaque</h2>
+      <div class="explore-grid">
+          <div class="explore-card">
+              <div class="card-top">
+                  <img src="{% static 'Janeiro_Branco/img/forum.png' %}" alt="Ícone de Fórum">
+                  <a href="https://www.calm.com/pt" target="_blank"><h3>Calm</h3></a>
+              </div>
+              <div class="card-bottom">
+                  <p>Para você que busca viver uma vida mais produtiva e aliviar o estresse, o Calm pode um ótimo app de saúde mental...</p>
+              </div>
+          </div>
+          <div class="explore-card">
+              <div class="card-top">
+                  <img src="{% static 'Janeiro_Branco/img/onde-procurar-ajuda.png' %}" alt="Ícone de Onde Encontrar Ajuda">
+                  <a href="https://play.google.com/store/apps/details?id=com.getsomeheadspace.android&pcampaignid=web_share" target="_blank"><h3>Headspace</h3></a>
+              </div>
+              <div class="card-bottom">
+                  <p>O Headspace é um programa que estimula o foco e a concentração e visa criar um ciclo de sono reparador...</p>
+              </div>
+          </div>
+          <div class="explore-card">
+              <div class="card-top">
+                  <img src="{% static 'Janeiro_Branco/img/aplicativos.png' %}" alt="Ícone de Aplicativos">
+                  <a href="https://www.happify.com/" target="_blank"><h3>Happify</h3></a>
+              </div>
+              <div class="card-bottom">
+                  <p>Focado na psicologia positiva, o Happify oferece jogos e tarefas para aliviar o estresse...</p>
+              </div>
+          </div>
+          <div class="explore-card">
+              <div class="card-top">
+                  <img src="{% static 'Janeiro_Branco/img/entenda-mais.png' %}" alt="Ícone de Entenda Mais">
+                  <a href="https://www.cingulo.com/" target="_blank"><h3>Cíngulo</h3></a>
+              </div>
+              <div class="card-bottom">
+                  <p>Baseado em terapia digital, o Cíngulo é um app que oferece guia de autoavaliação...</p>
+              </div>
+          </div>
+      </div>
+
+      <h2 style="text-align: center; margin-top: 60px; color: white; font-size: 2.5em;">Enviadas pela Comunidade</h2>
+      <div class="explore-grid">
         {% for rec in lista_de_recomendacoes %}
-        <div>
-            <h4><a href="{{ rec.url }}" target="_blank">{{ rec.nome_site_app }}</a></h4>
-            <p>{{ rec.descricao }}</p>
-            <small>
-            Enviado
-            {% if rec.creditar_autor %}
-                por <strong>{{ rec.autor.username }}</strong>
-            {% endif %}
-            em {{ rec.data_envio }}
-            </small>
-        </div>
-        <hr>
-
+          <div class="explore-card">
+            <div class="card-top">
+              <img src="{% static 'Janeiro_Branco/img/aplicativos.png' %}" alt="Ícone de Aplicativos">
+              <a href="{{ rec.url }}" target="_blank"><h3>{{ rec.nome_site_app }}</h3></a>
+            </div>
+            <div class="card-bottom">
+              <p>{{ rec.descricao }}</p>
+              <small style="display: block; text-align: right; margin-top: 15px; font-style: italic;">
+                Enviado
+                {% if rec.creditar_autor %}
+                  por <strong>{{ rec.autor.username }}</strong>
+                {% endif %}
+              </small>
+            </div>
+          </div>
         {% empty %}
-        <p>Ainda não há recomendações. Seja o primeiro a contribuir!</p>
+          <p style="grid-column: 1 / -1; text-align: center;">Ainda não há recomendações da comunidade. Seja o primeiro a contribuir!</p>
         {% endfor %}
+      </div>
+    </main>
 
-
-        <footer>
-		<p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Santos</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
+    <footer>
+		  <p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Santos</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
 		</footer>
 	</body>
 </html>

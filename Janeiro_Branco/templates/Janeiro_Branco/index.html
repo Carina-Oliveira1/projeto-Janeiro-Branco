@@ -29,13 +29,12 @@
 							<ul class="dropdown-menu">
 								<li><a href="{% url 'forum' %}">Fórum</a></li>
 								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
-								<li><a href="{% url 'aplicativos' %}">Aplicativos</a></li>
+								<li><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
 								<li><a href="{% url 'entenda_mais' %}">Entenda mais</a></li>
 							</ul>
 						</li>
 						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
 						<li class="nav-item"><a href="{% url 'login' %}">Login</a></li>
-                        <li class="nav-item"><a href="{% url 'cadastro' %}">Cadastre-se</a></li>
                         <li class="nav-item"><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
 					</ul>
     		</nav>
@@ -106,7 +105,6 @@
 				</div>
 
 	</section>
-		</main>
 
         <section id="prevencao">
 			<div class="texto-h2">
@@ -131,21 +129,53 @@
                 </div>
 
                 <div class="card">
-                    <img src="{% static 'Janeiro_Branco/img/prevencao3.png' %}" alt="">
+                    <img src="{% static 'Janeiro_Branco/img/prevencao3.png' %}" alt="Prato com alimentos saudáveis">
                     <div class="card-content">
                         <h3>Cuide da alimentação</h3>
-                        <p>As recomendações aqui são as mesmas de quem busca uma alimentação saudável para a mente e o corpo: reduzir o consumo de alimentos excessivamente gordurosos e ultraprocessados e de açúcares. Procure priorizar refeições saudáveis, com carnes magras, grãos integrais, frutas e vegetais. Evite uso excessivo de cafeína e álcool. </p>
+                        <p>Sua alimentação impacta diretamente sua saúde mental. Dê preferência a alimentos naturais e evite o consumo excessivo de açúcar, ultraprocessados e álcool.</p>
                     </div>
                 </div>
 
-                <div class="card">
-                    <img src="{% static 'Janeiro_Branco/img/prevencao4.png' %}" alt="Haeundae Beach">
-                    <div class="card-content">
-                        <h3>Relações Saúdaveis</h3>
-                        <p>Perceba suas relações cotidianas, priorize relacionamentos saudáveis e reforce laços sociais com pessoas que te fazem se sentir bem. Tenha atenção a comportamentos nos relacionamentos que possam trazer sofrimento.</p>
-                    </div>
-                </div>
-                </div>
+				<div class="card">
+    					<img src="{% static 'Janeiro_Branco/img/prevencao4.png' %}" alt="Grupo de amigos se apoiando">
+    					<div class="card-content">
+    					    <h3>Relações Saudáveis</h3>
+    					    <p>Priorize relações que te fazem bem e reforce laços com pessoas que te apoiam. Afaste-se de dinâmicas e comportamentos que possam gerar sofrimento.</p>
+    					</div>
+					</div>
+
+					<div class="card">
+            		<img src="{% static 'Janeiro_Branco/img/prevencao5.png' %}" alt="Mulher praticando autocuidado se abraçando">
+            		<div class="card-content">
+            		    <h3>Pratique o Autocuidado</h3>
+            		    <p>Reserve um tempo para si. Atividades que promovem bem-estar, como ler ou descansar, são essenciais para recarregar as energias e cuidar da sua saúde mental.</p>
+            		</div>
+        			</div>
+				
+        			<div class="card">
+        			    <img src="{% static 'Janeiro_Branco/img/prevencao6.png' %}" alt="Mulher meditando em posição de lótus">
+        			    <div class="card-content">
+        			        <h3>Atenção Plena</h3>
+        			        <p>Pratique a meditação. Essas técnicas ajudam a focar no presente, reduzir a ansiedade e a desenvolver uma maior consciência sobre seus pensamentos e sentimentos.</p>
+        			    </div>
+        			</div>
+				
+        			<div class="card">
+        			    <img src="{% static 'Janeiro_Branco/img/prevencao7.png' %}" alt="Homem com laptop planejando metas e objetivos">
+        			    <div class="card-content">
+        			        <h3>Estabeleça Metas</h3>
+        			        <p>Definir objetivos alcançáveis pode proporcionar um senso de propósito. Divida grandes metas em pequenos passos para tornar o processo mais gratificante.</p>
+        			    </div>
+        			</div>
+				
+        			<div class="card">
+        			    <img src="{% static 'Janeiro_Branco/img/prevencao8.png' %}" alt="Psicóloga conversando com paciente em sessão de terapia">
+        			    <div class="card-content">
+        			        <h3>Procure Ajuda</h3>
+        			        <p>Não hesite em procurar a ajuda de um psicólogo. Falar com um profissional pode fornecer ferramentas e estratégias para lidar com os desafios do dia a dia.</p>
+        			    </div>
+        			</div>
+				</div>
 		</section>
 
 		<section id="forum-cta">
@@ -160,6 +190,7 @@
     		    </div>
     		</div>
 		</section>
+	</main>
 
 		<footer>
 		<p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Santos</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>

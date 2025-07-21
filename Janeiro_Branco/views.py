@@ -22,9 +22,6 @@ def onde_encontrar_ajuda(request):
 def somos(request):
     return render(request, 'Janeiro_Branco/somos.html')
 
-def aplicativos(request):
-    return render(request, 'Janeiro_Branco/aplicativos.html')
-
 def entenda_mais(request):
     return render(request, 'Janeiro_Branco/entenda_mais.html')
 

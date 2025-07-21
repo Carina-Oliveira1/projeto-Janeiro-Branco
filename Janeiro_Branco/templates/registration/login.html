@@ -29,48 +29,53 @@
 							<ul class="dropdown-menu">
 								<li><a href="{% url 'forum' %}">Fórum</a></li>
 								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
-								<li><a href="{% url 'aplicativos' %}">Aplicativos</a></li>
+								<li><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
 								<li><a href="{% url 'entenda_mais' %}">Entenda mais</a></li>
 							</ul>
 						</li>
 						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
 						<li class="nav-item"><a href="{% url 'login' %}">Login</a></li>
-                        <li class="nav-item"><a href="{% url 'cadastro' %}">Cadastre-se</a></li>
 					</ul>
     		</nav>
 		</header>
 
-        <div class="login-body">
-            <div class="login-page-container">
-            
-                <div class="login-title-box">
-                <h2>LOGIN</h2>
-                </div>
+		<main>
+		<div class="login-body">
+			<div class="login-page-container">
 
-                <div class="login-form-box">
-                    <form>
-                        <label for="username">NOME DE USUÁRIO:</label>
-                        <input type="text" name="username" id="username" />
+				<div class="login-title-box">
+					<h2>LOGIN</h2>
+				</div>
 
-                        <label for="password">SENHA:</label>
-                        <input type="password" name="password" id="password" />
-                        
-                        <input type="submit" value="ENTRAR">
-                    </form>
-                </div>
+				<div class="styled-form-container">
+					<form method="POST">
 
-            </div>
-        </div>
+						{% csrf_token %}
 
-        <h1>Login</h1>
-            {% if form.errors %}
-            <p>Seu usuário ou senha estão incorretos.</p>
-            {% endif %}
-            <form method="POST">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Entrar</button>
-            </form>
+						{% if form.errors %}
+							<div class="form-errors">
+								<p style="color: #ffcdd2; text-align: center; margin-bottom: 15px;">
+									Seu nome de usuário ou senha estão incorretos. Tente novamente.
+								</p>
+							</div>
+						{% endif %}
+
+						{{ form.as_p }}
+
+						<button type="submit">Entrar</button>
+
+						<div class="redirect-link">
+							<p>Não possui uma conta? <a href="{% url 'cadastro' %}">Cadastre-se</a></p>
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		</main>
+
 
         <footer>
 		    <p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Santos</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
