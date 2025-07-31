@@ -7,9 +7,6 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request, 'Janeiro_Branco/index.html')
 
-def explore(request):
-    return render(request, 'Janeiro_Branco/explore.html')
-
 def forum(request):
     return render(request, 'Janeiro_Branco/forum.html')
 
@@ -21,9 +18,6 @@ def onde_encontrar_ajuda(request):
 
 def somos(request):
     return render(request, 'Janeiro_Branco/somos.html')
-
-def entenda_mais(request):
-    return render(request, 'Janeiro_Branco/entenda_mais.html')
 
 def cadastro(request):
     return render(request, 'Janeiro_Branco/cadastro.html')

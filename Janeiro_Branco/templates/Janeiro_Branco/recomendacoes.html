@@ -25,12 +25,11 @@
 								<li><a href="{% url 'index' %}#prevencao">Prevenção</a></li>
 							</ul>
 						</li>
-						<li class="nav-item dropdown"> <a href="{% url 'explore' %}">Explore &#9662;</a> 
+						<li class="nav-item dropdown"> <a href="#">Explore &#9662;</a> 
 							<ul class="dropdown-menu">
 								<li><a href="{% url 'forum' %}">Fórum</a></li>
 								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
 								<li><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
-								<li><a href="{% url 'entenda_mais' %}">Entenda mais</a></li>
 							</ul>
 						</li>
 						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
@@ -50,68 +49,43 @@
         Ferramentas que podem ajudar na sua jornada de saúde mental, sugeridos por nossos usuários.
       </p>
 
-      <section class="styled-form-container" id="nova-recomendacao">
-        <form method="POST" action="{% url 'criar_recomendacao' %}" class="styled-form">
-          {% csrf_token %}
-
-          <p>
-              {{ form.nome_site_app.label_tag }}
-              {{ form.nome_site_app }}
-          </p>
-
-          <p>
-              {{ form.url.label_tag }}
-              {{ form.url }}
-          </p>
-          
-          <p>
-              {{ form.descricao.label_tag }}
-              {{ form.descricao }}
-          </p>
-
-          <p class="checkbox-group">
-              {{ form.creditar_autor }} {{ form.creditar_autor.label_tag }} </p>
-
-          <button type="submit" class="site-button">Enviar Recomendação</button>
-        </form>
-      </section>
-
       <h2 style="text-align: center; margin-top: 60px; color: white; font-size: 2.5em;">Recomendações em Destaque</h2>
       <div class="explore-grid">
           <div class="explore-card">
               <div class="card-top">
-                  <img src="{% static 'Janeiro_Branco/img/forum.png' %}" alt="Ícone de Fórum">
+                  <img src="{% static 'Janeiro_Branco/img/calm_logo.png' %}" alt="logo do aplicativo Calm">
                   <a href="https://www.calm.com/pt" target="_blank"><h3>Calm</h3></a>
               </div>
               <div class="card-bottom">
-                  <p>Para você que busca viver uma vida mais produtiva e aliviar o estresse, o Calm pode um ótimo app de saúde mental...</p>
+                  <p>Para você que busca viver uma vida mais produtiva e aliviar o estresse, o Calm pode um ótimo app de saúde mental. Atualmente, o software conta com exercícios de respiração e alongamento, músicas relaxantes, aulas de meditação guiada, dentre outras funcionalidades</p>
+                    
               </div>
           </div>
           <div class="explore-card">
               <div class="card-top">
-                  <img src="{% static 'Janeiro_Branco/img/onde-procurar-ajuda.png' %}" alt="Ícone de Onde Encontrar Ajuda">
+                  <img src="{% static 'Janeiro_Branco/img/headspace_logo.png' %}" alt="logo do aplicativo Headspcae">
                   <a href="https://play.google.com/store/apps/details?id=com.getsomeheadspace.android&pcampaignid=web_share" target="_blank"><h3>Headspace</h3></a>
               </div>
               <div class="card-bottom">
-                  <p>O Headspace é um programa que estimula o foco e a concentração e visa criar um ciclo de sono reparador...</p>
+                  <p>O Headspace é um programa que estimula o foco e a concentração e visa criar um ciclo de sono reparador. Para isso, ele oferece ferramentas de meditação personalizadas, para trabalhar objetivos específicos, como melhorar o sono e controlar a ansiedade.</p>
               </div>
           </div>
           <div class="explore-card">
               <div class="card-top">
-                  <img src="{% static 'Janeiro_Branco/img/aplicativos.png' %}" alt="Ícone de Aplicativos">
+                  <img src="{% static 'Janeiro_Branco/img/happify_logo.png' %}" alt="logo do aplicativo Happify">
                   <a href="https://www.happify.com/" target="_blank"><h3>Happify</h3></a>
               </div>
               <div class="card-bottom">
-                  <p>Focado na psicologia positiva, o Happify oferece jogos e tarefas para aliviar o estresse...</p>
+                  <p>Focado na psicologia positiva, o Happify oferece jogos e tarefas para aliviar o estresse, elevar o bom humor e bem estar.</p>
               </div>
           </div>
           <div class="explore-card">
               <div class="card-top">
-                  <img src="{% static 'Janeiro_Branco/img/entenda-mais.png' %}" alt="Ícone de Entenda Mais">
+                  <img src="{% static 'Janeiro_Branco/img/cingulo_logo.png' %}" alt="logo do aplicativo Cíngulo">
                   <a href="https://www.cingulo.com/" target="_blank"><h3>Cíngulo</h3></a>
               </div>
               <div class="card-bottom">
-                  <p>Baseado em terapia digital, o Cíngulo é um app que oferece guia de autoavaliação...</p>
+                  <p>Baseado em terapia digital, o Cíngulo é um app que oferece guia de autoavaliação, diário emocional e programas personalizados com sessões em áudio e texto.</p>
               </div>
           </div>
       </div>
@@ -138,6 +112,33 @@
           <p style="grid-column: 1 / -1; text-align: center;">Ainda não há recomendações da comunidade. Seja o primeiro a contribuir!</p>
         {% endfor %}
       </div>
+
+ <section class="styled-form-container" id="nova-recomendacao">
+        <form method="POST" action="{% url 'criar_recomendacao' %}" class="styled-form">
+          {% csrf_token %}
+
+          <p>
+              {{ form.nome_site_app.label_tag }}
+              {{ form.nome_site_app }}
+          </p>
+
+          <p>
+              {{ form.url.label_tag }}
+              {{ form.url }}
+          </p>
+          
+          <p>
+              {{ form.descricao.label_tag }}
+              {{ form.descricao }}
+          </p>
+
+          <p class="checkbox-group">
+              {{ form.creditar_autor }} {{ form.creditar_autor.label_tag }} </p>
+
+          <button type="submit" class="site-button">Enviar Recomendação</button>
+        </form>
+      </section>
+
     </main>
 
     <footer>
