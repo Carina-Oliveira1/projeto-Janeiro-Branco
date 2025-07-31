@@ -1,4 +1,4 @@
-# Projeto Janeiro Branco 🤍
+a# Projeto Janeiro Branco 🤍
 
 ![Campanha](https://img.shields.io/badge/Campanha-Janeiro%20Branco-ffffff?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python)
@@ -81,43 +81,92 @@ Antes de começar, certifique-se de que você tem os seguintes softwares instala
     pip install -r requirements.txt
     ```
 
-5.  **Configure o Banco de Dados**
-    *Abra o PostgreSQL e crie um novo banco de dados (ex: janeiro_branco_db).
-    ```bash
-    python database.py
-    ```
+5.  **Configure o Banco de Dados (PostgreSQL)**
+
+    A aplicação precisa de um banco de dados PostgreSQL para funcionar.
+
+    * **5.1. Instale o PostgreSQL:** Se você ainda não o tem, [baixe e instale o PostgreSQL](https://www.postgresql.org/download/) em sua máquina. Durante a instalação, um programa chamado **pgAdmin** também         será instalado, que é uma interface gráfica para gerenciar seus bancos de dados.
+
+    * **5.2. Crie o Banco de Dados:**
+        1.  Abra o **pgAdmin**.
+        2.  Conecte-se ao seu servidor local (a senha é a que você definiu durante a instalação do PostgreSQL).
+        3.  Na árvore lateral, clique com o botão direito em **"Databases"** -> **"Create"** -> **"Database..."**.
+        4.  No campo **"Database"**, digite o nome `janeiro_db` e clique em **"Save"**.
+
+    * **5.3. Configure as Variáveis de Ambiente:** Para conectar o Django ao seu banco de dados de forma segura, usamos um arquivo `.env`.
+        1.  Na raiz do projeto (na mesma pasta do `manage.py`), crie um arquivo chamado `.env`.
+        2.  Copie e cole o conteúdo abaixo nesse arquivo, **substituindo os valores** pelos da sua configuração local do PostgreSQL:
+            ```env
+            # Arquivo .env
+        
+            # Configuração do Banco de Dados
+            DB_NAME=janeiro_db
+            DB_USER=postgres
+            DB_PASSWORD=sua_senha_do_postgres_aqui
+            DB_HOST=localhost
+            DB_PORT=5432
+        
+            # Chave secreta do Django
+            SECRET_KEY='django-insecure-chave-aleatoria-para-desenvolvimento'
+            
+            # Modo de Debug
+            DEBUG=True
+            ```
+            > **Importante:** O `DB_USER` geralmente é `postgres` por padrão. O `DB_PASSWORD` é a senha que você criou ao instalar o PostgreSQL.
+
+    * **5.4. Crie as Tabelas no Banco:** Com o banco criado e as variáveis de ambiente configuradas, execute o comando que cria todas as tabelas do projeto.
+        ```bash
+        python manage.py migrate
+        ```
 
 6.  **Inicie o servidor Django:**
     Agora, sua aplicação está pronta para ser executada!
     ```bash
-    python gerador_site.py
+    python manage.py runserver
     ```
 
 7.  **Acesse a aplicação:**
     Abra seu navegador de internet e acesse a seguinte URL:
-    [http://127.0.0.1:5000](http://127.0.0.1:5000)
+    [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 Pronto! A aplicação estará rodando em sua máquina local.
 
 ## 📂 Estrutura de Pastas
 
 ```
-Janeiro_Branco/
-|-- gerador_site.py             # Arquivo principal do Django (Back-end)
-|-- database.py        # Script para criar o banco de dados
-|-- static/            # Pasta para arquivos estáticos
-|   |-- css/
-|   |   `-- index.css  # Folha de estilos
-|   |-- img/
-|   |   `-- index.css  # Folha de estilos
-|-- templates/         # Pasta para os templates HTML
-|   |-- index.html     # Página inicial com o formulário
-|   `-- forum.html     # Página para exibir as mensagens
-|   `-- login.html     # Página para realizar o login
-|   `-- explore.html   # Página para explorar conteúdos complementares
-|-- .gitignore         # Arquivo para ignorar arquivos no Git
-|-- requirements.txt   # Dependências do Python
-`-- README.md          # Este arquivo de documentação
+Projeto_Janeiro_Branco/
+├── manage.py                    # Script principal de gerenciamento do Django
+├── project/                     # Pasta de configuração do projeto
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py              # Configurações do projeto
+│   ├── urls.py                  # URLs globais
+│   └── wsgi.py
+├── janeiro_branco/              # Aplicativo principal do projeto
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py                  # URLs do aplicativo
+│   ├── views.py
+│   ├── migrations/              # Migrações do banco de dados
+│   ├── static/
+│   │   └── janeiro_branco/
+│   │       ├── css/
+│   │       │   └── index.css
+│   │       └── img/
+│   │           └── (todas as imagens do app)
+│   └── templates/
+│       ├── janeiro_branco/
+│       │   └── (todos os templates .html do app)
+│       └── registration/
+│           └── login.html
+├── venv/                        # Pasta do ambiente virtual Python
+├── .gitignore                   # Arquivo para ignorar arquivos no Git
+├── requirements.txt             # Lista de dependências do projeto
+└── README.md                    # Este arquivo de documentação
 ```
 
 ---
@@ -128,22 +177,23 @@ Projeto da disciplina Desenvolvimento de Sistema Web, do curso de Tecnologia em 
 
 ```mermaid
 graph TD
-    A[Usuário] -->|Interage com| B(View);
-    B -->|Envia requisições| C(Controller);
-    C -->|Atualiza/Consulta| D(Model);
+    A[Usuário] -->|Navega para URL| B(Django URL Routing);
+    B -->|Chama a View correspondente| C(View);
+    C -->|Consulta/Atualiza dados| D(Model);
     D -->|Retorna dados| C;
-    C -->|Atualiza| B;
-    B -->|Apresenta para| A;
+    C -->|Renderiza o Template com os dados| E(Template);
+    E -->|Gera HTML| C;
+    C -->|Retorna resposta HTTP| A;
 
     subgraph "Projeto Janeiro Branco"
-        B(<b>View</b><br>HTML5, CSS3<br><i>templates/</i><br>- index.html<br>- forum.html<br>- login.html<br>- explore.html);
-        C(<b>Controller</b><br>Python 3, Django<br><i>gerador_site.py</i>);
-        D(<b>Model</b><br>SQLite 3<br><i>database.py</i><br>mensagens.db);
+        E["Template (Apresentação)<br>HTML5, CSS3<br>templates/Janeiro_Branco/"];
+        C["View (Lógica/Controller)<br>Python 3, Django<br>Janeiro_Branco/views.py"];
+        D["Model (Dados)<br>PostgreSQL<br>Janeiro_Branco/models.py"];
     end
 
-    style B fill:#000000,stroke:#ffffff,stroke-width:2px
-    style C fill:#000000,stroke:#ffffff,stroke-width:2px
-    style D fill:#000000,stroke:#ffffff,stroke-width:2px
+    style E fill:#0C4B33,stroke:#ffffff,stroke-width:2px,color:#fff
+    style C fill:#0C4B33,stroke:#ffffff,stroke-width:2px,color:#fff
+    style D fill:#0C4B33,stroke:#ffffff,stroke-width:2px,color:#fff
 ```
 
 A imagem do modelo MVC do Projeto Janeiro Branco foi gerada usando a ferramenta de inteligência artificial: Gemini.
