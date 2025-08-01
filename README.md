@@ -1,4 +1,4 @@
-a# Projeto Janeiro Branco 🤍
+# Projeto Janeiro Branco 🤍
 
 ![Campanha](https://img.shields.io/badge/Campanha-Janeiro%20Branco-ffffff?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python)
