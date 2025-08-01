@@ -38,6 +38,9 @@ A aplicação foi construída utilizando um conjunto de tecnologias modernas, se
 * **Banco de Dados:**
     * `PostgreSQL`: : Sistema de gerenciamento de banco de dados objeto-relacional de código aberto, robusto e escalável.
 
+## 🚀 Como Acessar a Parte Estática do Projeto
+* **Acesse:** (https://carina-oliveira1.github.io/projeto-Janeiro-Branco/)
+
 ## 🚀 Como Executar o Projeto Localmente
 
 Para rodar esta aplicação em seu ambiente de desenvolvimento, siga os passos detalhados abaixo.
