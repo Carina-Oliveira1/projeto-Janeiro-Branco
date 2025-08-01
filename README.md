@@ -11,6 +11,13 @@ Este projeto é uma aplicação web completa desenvolvida em apoio à campanha *
 
 A **Campanha Janeiro Branco** é uma iniciativa que tem o intuito de conscientizar a sociedade sobre a importância da **saúde mental**. Ela surgiu como uma resposta à necessidade de promover reflexões sobre a vida, relações, objetivos e passados, especialmente no início do ano. Criada em 2014 pelo psicólogo, palestrante e escritor mineiro Leonardo Abrahão, a campanha se consolidou como um marco no calendário brasileiro e, desde 2023, é reconhecida oficialmente como Lei Federal **(Lei 14.556/23)**.
 
+## 👥 Autores
+
+Este projeto foi desenvolvido pelos alunos do curso Técnico em Desenvolvimento de Sistemas no Instituto Federal de Brasília:
+
+* **Carina Oliveira** - [GitHub](https://github.com/Carina-Oliveira1)
+* **Diego Costa** - [GitHub](https://github.com/DiegoCCosta)
+
 ## ✨ Funcionalidades
 
 O projeto conta com as seguintes funcionalidades:
