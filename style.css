@@ -811,3 +811,124 @@ footer a:hover{
         width: 100%;
     }
 }
+
+/* --- Estilos da Página 'Somos' --- */
+.somos-titulo-container {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.somos-titulo-container h2 {
+    display: inline-block;
+    background-color: #81d1ff;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
+
+.somos-titulo-container p {
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o parágrafo */
+    font-size: 1.3em;
+    line-height: 1.6;
+    text-indent: 0;
+    text-align: center;
+}
+
+.desenvolvedores-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Cria duas colunas de tamanho igual */
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.desenvolvedor-card {
+    background-color: #81d1ff;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.desenvolvedor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.desenvolvedor-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Deixa a imagem redonda */
+    overflow: hidden; /* Garante que a imagem não saia do círculo */
+    margin-bottom: 20px;
+    background-color: #FFFFFF; /* Fundo branco caso a imagem não carregue */
+    padding: 5px; /* Pequena borda interna */
+}
+
+.desenvolvedor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem cobrir todo o espaço sem distorcer */
+}
+
+.desenvolvedor-info h3 {
+    color: #FFFFFF;
+    font-size: 1.8em;
+    margin: 0 0 15px 0;
+}
+
+.desenvolvedor-info p {
+    font-size: 1.1em;
+    text-align: center;
+    text-indent: 0;
+    margin-bottom: 25px;
+    min-height: 120px; /* Define uma altura mínima para alinhar os botões */
+}
+
+.dev-link {
+    background-color: #FFFFFF;
+    color: #54c0ff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Merienda', normal;
+    transition: background-color 0.2s, color 0.2s;
+
+    /* Novas propriedades para alinhar ícone e texto */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dev-link svg {
+    fill: currentColor;
+}
+
+.dev-link:hover {
+    background-color: #eaf8ff;
+    color: #3da9e6;
+}
+
+/* --- Deixando a página 'Somos' responsiva --- */
+@media (max-width: 768px) {
+    .desenvolvedores-grid {
+        grid-template-columns: 1fr; /* Em telas menores, mostra 1 card por linha */
+    }
+
+    .somos-titulo-container p {
+        font-size: 1.1em;
+    }
+
+    .desenvolvedor-info p {
+        min-height: auto; /* Remove a altura mínima no mobile */
+    }
+}
