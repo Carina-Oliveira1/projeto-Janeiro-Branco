@@ -884,12 +884,19 @@ footer a:hover{
     margin: 0 0 15px 0;
 }
 
+.desenvolvedor-info {
+    display: flex;
+    flex-direction: column; /* Organiza os itens (título, texto, botões) em coluna */
+    flex-grow: 1; /* Faz esta área ocupar todo o espaço vertical disponível */
+    text-align: center;
+}
+
 .desenvolvedor-info p {
     font-size: 1.1em;
     text-align: center;
     text-indent: 0;
-    margin-bottom: 25px;
-    min-height: 120px; /* Define uma altura mínima para alinhar os botões */
+    margin-bottom: 0; /* Removemos a margem antiga */
+    flex-grow: 1; /* Faz o parágrafo "empurrar" os botões para baixo */
 }
 
 .dev-link {
@@ -931,4 +938,12 @@ footer a:hover{
     .desenvolvedor-info p {
         min-height: auto; /* Remove a altura mínima no mobile */
     }
+}
+
+/* --- Estilos do contêiner dos links --- */
+.dev-links-container {
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    gap: 15px; /* Cria um espaço entre os botões */
+    margin-top: 25px; /* Cria um espaço acima dos botões */
 }
