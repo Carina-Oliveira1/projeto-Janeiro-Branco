@@ -42,6 +42,9 @@ A aplicação foi construída utilizando um conjunto de tecnologias modernas, se
     * `Python 3`: Linguagem principal para toda a lógica da aplicação.
     * `Django`: Framework de código aberto para criar o servidor web.
 
+* **Formato de Dados (Fixtures):**
+    * `JSON (JavaScript Object Notation)`: Utilizado para criar os fixtures do Django. Esses arquivos (.json) contêm os dados iniciais (usuários falsos, locais de atendimento, mensagens do fórum e recomendações) que são carregados no banco de dados para que a aplicação já comece com conteúdo pré-definido.
+
 * **Banco de Dados:**
     * `PostgreSQL`: : Sistema de gerenciamento de banco de dados objeto-relacional de código aberto, robusto e escalável.
 
