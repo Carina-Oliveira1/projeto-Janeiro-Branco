@@ -33,7 +33,7 @@
 								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
 							</ul>
 						</li>
-						<li class="nav-item"><a href="{% url 'somos' %}" class="login-button">Somos</a></li>
+						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
 						{% if user.is_authenticated %}
 							<li class="nav-item">  <form action="{% url 'logout' %}" method="post" style="display: inline;">
 									{% csrf_token %}
@@ -51,7 +51,7 @@
             <section id="somos">
                 <div class="somos-titulo-container">
                     <h2>QUEM SOMOS</h2>
-                    <p>Somos estudantes do curso Técninco em Desenvolvimento de Sistemas no Instituto Federal de Brasília. Criamos este espaço como um projeto para a matéria de Desenvolvimento de Sistemas WEB, com o tema "Vozes das Cores" que surgiu a partir da campanha "Cores do mês". Escolhemos o Janeiro Branco com o objetivo de usar nossas habilidades para promover a conscientização sobre a saúde mental.</p>
+                    <p>Somos estudantes do curso Técnico em Desenvolvimento de Sistemas no Instituto Federal de Brasília. Criamos este espaço como o projeto final para a matéria de Desenvolvimento de Sistemas WEB, com o tema "Vozes das Cores" que surgiu a partir da campanha "Cores do mês". Escolhemos o Janeiro Branco com o objetivo de usar nossas habilidades para servir como um canal de apoio e promover a conscientização sobre a saúde mental.</p>
                 </div>
 
                 <div class="desenvolvedores-grid">
@@ -59,7 +59,7 @@
                         <div class="desenvolvedor-info">
                             <h3>Carina Oliveira</h3>
                             <p>
-                                (Aqui você pode escrever um pouco sobre você, seu papel no projeto, suas motivações e o que você mais gostou de desenvolver. Fale sobre suas paixões e como a tecnologia pode ajudar causas como o Janeiro Branco.)
+								Como futuro desenvolvedor back-end, o projeto Janeiro Branco foi uma experiência desafiadora e muito útil, me dando a oportunidade para evoluir minhas habilidades em programação e, ao mesmo tempo, contribuir para uma causa tão importante e que eu me identifico tanto como a saúde mental :)
                             </p>
                             <div class="dev-links-container">
 							    <a href="https://github.com/Carina-Oliveira1" target="_blank" class="dev-link" title="Perfil no GitHub">
