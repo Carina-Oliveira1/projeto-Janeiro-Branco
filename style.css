@@ -407,57 +407,81 @@ h3{
     background-color: #3da9e6;
 }
 
-#forum-cta {
-	background-color: #FFFFFF; /* Fundo branco para destacar como um card */
-	padding: 50px;
-	margin: 60px auto; /* Adiciona espaçamento vertical e centraliza */
-	max-width: 960px; /* Limita a largura máxima */
-	border-radius: 25px; /* Bordas arredondadas */
-	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); /* Sombra para dar profundidade */
+/* --- Estilos para as Chamadas de Ação (CTA) --- */
+
+/* Contêiner que agrupa os cards lado a lado */
+.cta-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Espaço entre os dois cards */
+    flex-wrap: wrap; /* Permite que quebrem a linha em telas menores */
+    margin: 60px 20px;
 }
 
-.forum-cta-container {
-	display: flex;
-	align-items: center; /* Centraliza os itens verticalmente */
-	gap: 50px; /* Espaço entre o texto e a imagem */
+/* Estilo individual de cada card (Fórum e Mapa) */
+.cta-card {
+    background-color: #FFFFFF; /* */
+    padding: 40px;
+    border-radius: 25px; /* */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); /* */
+    flex: 1; /* Faz com que ocupem o espaço de forma equilibrada */
+    min-width: 400px; /* Largura mínima antes de quebrar a linha */
+    max-width: 550px;
 }
 
-.forum-cta-text {
-	flex: 1; /* Permite que o texto ocupe o espaço disponível */
+.cta-card-container {
+    display: flex;
+    align-items: center; /* */
+    gap: 40px; /* */
 }
 
-.forum-cta-image {
-	flex: 0.8; /* Define um tamanho proporcional para a imagem */
+.cta-card-text {
+    flex: 1; /* */
 }
 
-.forum-cta-image img {
-	width: 100%;
-	border-radius: 15px; /* Arredonda os cantos da imagem */
+.cta-card-image {
+    flex: 0.8; /* */
 }
 
-/* Ajuste no H2 para o novo fundo branco */
-.forum-cta-text h2 {
-	font-size: 2.2em;
-	color: #2f7299; /* Cor escura para contrastar com o fundo branco */
-	margin-bottom: 20px;
-	text-align: left;
+.cta-card-image img {
+    width: 100%;
+    border-radius: 15px; /* */
 }
 
-/* Ajuste no parágrafo para o novo fundo branco */
-.forum-cta-text p {
-	color: #585858; /* Cor de texto mais suave */
-	font-size: 1.3em;
-	text-align: left;
-	text-indent: 0;
-	line-height: 1.6;
+.cta-card-text h2 {
+    font-size: 2.2em;
+    color: #2f7299; /* */
+    margin-bottom: 20px;
+    text-align: left; /* */
 }
 
-/* Ajuste no botão para alinhamento à esquerda */
-.forum-cta-text .site-button {
-	margin-top: 30px;
-	display: inline-block; /* Garante que o botão não ocupe a largura toda */
-	margin-left: 0;
-	margin-right: auto;
+.cta-card-text p {
+    color: #585858; /* */
+    font-size: 1.3em;
+    text-align: left;
+    text-indent: 0;
+    line-height: 1.6; /* */
+}
+
+.cta-card-text .site-button {
+    margin-top: 30px;
+    display: inline-block; /* */
+    margin-left: 0;
+    margin-right: auto; /* */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 920px) {
+    .cta-card-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cta-card-text h2, .cta-card-text p {
+        text-align: center;
+    }
+    .cta-card-text .site-button {
+        margin: 30px auto 0 auto;
+    }
 }
 
 .forum-container {
