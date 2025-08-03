@@ -35,7 +35,7 @@ A aplicação foi construída utilizando um conjunto de tecnologias modernas, se
 
 * **Front-end (Interface do Usuário):**
     * `HTML5`: Para a estruturação semântica do conteúdo.
-    * `CSS3`: Para a estilização, layout e design responsivo, seguindo a identidade visual do Agosto Lilás.
+    * `CSS3`: Para a estilização, layout e design responsivo, seguindo a identidade visual do Janeiro Branco.
     * `JavaScript`: Para a implementação da API de mapa OpenLayers.
 
 * **Back-end (Lógica do Servidor):**
