@@ -33,7 +33,15 @@
 							</ul>
 						</li>
 						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
-						<li class="nav-item"><a href="{% url 'login' %}">Login</a></li>
+						{% if user.is_authenticated %}
+							<li class="nav-item">  <form action="{% url 'logout' %}" method="post" style="display: inline;">
+									{% csrf_token %}
+									<button type="submit" class="login-button">Logout</button>
+								</form>
+							</li>
+						{% else %}
+							<li class="nav-item"><a href="{% url 'login' %}" class="login-button">Login</a></li>
+						{% endif %}
 					</ul>
     		</nav>
 		</header>
@@ -77,7 +85,7 @@
 
 
         <footer>
-		    <p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Santos</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
+		    <p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Oliveira</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
 	    </footer>
 	</body>
 </html>

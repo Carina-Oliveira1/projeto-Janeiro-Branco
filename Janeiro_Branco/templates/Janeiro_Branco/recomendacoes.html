@@ -33,7 +33,15 @@
 							</ul>
 						</li>
 						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
-						<li class="nav-item"><a href="{% url 'login' %}">Login</a></li>
+						{% if user.is_authenticated %}
+							<li class="nav-item">  <form action="{% url 'logout' %}" method="post" style="display: inline;">
+									{% csrf_token %}
+									<button type="submit" class="login-button">Logout</button>
+								</form>
+							</li>
+						{% else %}
+							<li class="nav-item"><a href="{% url 'login' %}" class="login-button">Login</a></li>
+						{% endif %}
 					</ul>
         </nav>
 		</header>
@@ -49,7 +57,12 @@
         Ferramentas que podem ajudar na sua jornada de saúde mental, sugeridos por nossos usuários.
       </p>
 
-      <h2 style="text-align: center; margin-top: 60px; color: white; font-size: 2.5em;">Recomendações em Destaque</h2>
+      <div class="title-container">
+        <div class="title-capsule-blue">
+          <h2>Recomendações em Destaque</h2>
+        </div>
+      </div>
+
       <div class="explore-grid">
           <div class="explore-card">
               <div class="card-top">
@@ -90,7 +103,11 @@
           </div>
       </div>
 
-      <h2 style="text-align: center; margin-top: 60px; color: white; font-size: 2.5em;">Enviadas pela Comunidade</h2>
+        <div class="title-container recomendacoes-titulo-container">
+          <div class="title-capsule-blue">
+              <h1>Enviadas pela Comunidade</h1>
+          </div>
+        </div>
       <div class="explore-grid">
         {% for rec in lista_de_recomendacoes %}
           <div class="explore-card">
@@ -100,11 +117,13 @@
             </div>
             <div class="card-bottom">
               <p>{{ rec.descricao }}</p>
-              <small style="display: block; text-align: right; margin-top: 15px; font-style: italic;">
-                Enviado
-                {% if rec.creditar_autor %}
-                  por <strong>{{ rec.autor.username }}</strong>
-                {% endif %}
+              <small class="recomendacao-autor">
+                  Enviado por 
+                  {% if rec.creditar_autor %}
+                      <strong>{{ rec.autor.username }}</strong>
+                  {% else %}
+                      <strong>Anônimo</strong>
+                  {% endif %}
               </small>
             </div>
           </div>
@@ -142,7 +161,7 @@
     </main>
 
     <footer>
-		  <p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Santos</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
+		  <p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Oliveira</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
 		</footer>
 	</body>
 </html>

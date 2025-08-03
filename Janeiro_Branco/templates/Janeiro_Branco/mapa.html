@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Janeiro Branco</title>
+		<meta name="author" content="Carina Oliveira, Diego Costa"/>
+		<meta name="keywords" content="Janeiro Branco, Saude Mental, Saude, Mental, Janeiro, Branco"/>
+		<meta name="description" content="Site informativo sobre o Janeiro Branco, o mês da saúde mental"/>
+		<link rel="stylesheet" href="{% static "Janeiro_Branco/css/index.css" %}">
+	</head>
+	<body>
+		<header class="header">
+    		<nav class="home">
+        		<a href="#inicio" class="logo">
+               		<img src="{% static 'Janeiro_Branco/img/fita.png' %}" alt="Laço da campanha Janeiro Branco">
+                	<span>Janeiro Branco</span>
+        		</a>
+        		  <ul class="main-nav">
+						<li class="nav-item dropdown"> <a href="#">Saiba Mais &#9662;</a> 
+							<ul class="dropdown-menu">
+								<li><a href="#o-que-e">O que é</a></li>
+								<li><a href="#importancia">Importância</a></li>
+								<li><a href="#dados">Dados</a></li>
+								<li><a href="#prevencao">Prevenção</a></li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown"> <a href="#">Explore &#9662;</a> 
+							<ul class="dropdown-menu">
+								<li><a href="{% url 'forum' %}">Fórum</a></li>
+								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
+								<li><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
+						{% if user.is_authenticated %}
+							<li class="nav-item">  <form action="{% url 'logout' %}" method="post" style="display: inline;">
+									{% csrf_token %}
+									<button type="submit" class="login-button">Logout</button>
+								</form>
+							</li>
+						{% else %}
+							<li class="nav-item"><a href="{% url 'login' %}" class="login-button">Login</a></li>
+						{% endif %}
+					</ul>
+    		</nav>
+		</header>
+
+        <main>
+            <div class="page-container">
+                <div class="title-container mapa-titulo-container">
+                    <div class="title-capsule-blue">
+                        <h1>Mapa de Atendimento Psicológico</h1>
+                    </div>
+                </div>
+
+                <p class="mapa-descricao">
+                    Este é o mapa de atendimento psicológico. Conta com unidades de atendimento em 6 regiões administrativas de Brasília, podendo ser filtradas por forma de pagamento e tipo de atendimento.
+                </p>
+
+                <div class="map-container">
+                    <div class="filters">
+                        <div class="filter-group">
+                            <label for="regiao-filter">Região Administrativa:</label>
+                            <select id="regiao-filter">
+                                <option value="todos">Todas</option>
+                                {% for regiao in regioes %}
+                                    <option value="{{ regiao.nome }}">{{ regiao.nome }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="pagamento-filter">Forma de Pagamento:</label>
+                            <select id="pagamento-filter">
+                                <option value="todos">Todas</option>
+                                {% for value, label in formas_pagamento %}
+                                    <option value="{{ value }}">{{ label }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="tipo-filter">Tipo de Atendimento:</label>
+                            <select id="tipo-filter">
+                                <option value="todos">Todos</option>
+                                {% for value, label in tipos_atendimento %}
+                                    <option value="{{ value }}">{{ label }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div id="map"></div>
+                </div>
+
+                <div id="popup" class="ol-popup">
+                    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                    <div id="popup-content"></div>
+                </div>
+            </div>
+        </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/ol@v9.2.4/dist/ol.js"></script>
+   <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- ELEMENTOS DO POP-UP (NOVO) ---
+            const container = document.getElementById('popup');
+            const content = document.getElementById('popup-content');
+            const closer = document.getElementById('popup-closer');
+
+            // --- CRIA O OVERLAY DO POP-UP (NOVO) ---
+            const overlay = new ol.Overlay({
+                element: container,
+                autoPan: {
+                    animation: {
+                        duration: 250,
+                    },
+                },
+            });
+
+            // Coordenadas de Brasília para centralizar o mapa
+            const brasiliaCoords = ol.proj.fromLonLat([-47.9292, -15.7801]);
+
+            // Cria o mapa base com tiles do OpenStreetMap
+            const map = new ol.Map({
+                target: 'map',
+                layers: [
+                    new ol.layer.Tile({
+                        source: new ol.source.OSM()
+                    })
+                ],
+                overlays: [overlay], // Adiciona o overlay ao mapa (NOVO)
+                view: new ol.View({
+                    center: brasiliaCoords,
+                    zoom: 11
+                })
+            });
+
+            // Estilo dos pontos no mapa
+            const iconStyle = new ol.style.Style({
+                image: new ol.style.Icon({
+                    anchor: [0.5, 1],
+                    src: '{% static "Janeiro_Branco/img/pino.png" %}',
+                    scale: 0.1
+                })
+            });
+
+            const vectorSource = new ol.source.Vector();
+            const vectorLayer = new ol.layer.Vector({
+                source: vectorSource,
+                style: iconStyle
+            });
+            map.addLayer(vectorLayer);
+            
+            let allFeatures = [];
+
+            // Busca os dados da nossa API
+            fetch("{% url 'locais_api' %}")
+                .then(response => response.json())
+                .then(data => {
+                    const geoJSONFormat = new ol.format.GeoJSON();
+                    allFeatures = geoJSONFormat.readFeatures(data, {
+                        featureProjection: 'EPSG:3857'
+                    });
+                    vectorSource.addFeatures(allFeatures);
+                });
+
+            // --- LÓGICA DE FILTROS (use a versão melhorada que fizemos antes) ---
+            const regiaoFilter = document.getElementById('regiao-filter');
+            const pagamentoFilter = document.getElementById('pagamento-filter');
+            const tipoFilter = document.getElementById('tipo-filter');
+
+            function applyFilters() {
+                // ... (a sua função de filtro melhorada vai aqui)
+                const selectedRegiao = regiaoFilter.value;
+                const selectedPagamento = pagamentoFilter.value;
+                const selectedTipo = tipoFilter.value;
+
+                vectorSource.clear();
+
+                const filteredFeatures = allFeatures.filter(feature => {
+                    const props = feature.getProperties();
+                    const regiaoMatch = selectedRegiao === 'todos' || props.regiao === selectedRegiao;
+                    const pagamentoMatch = selectedPagamento === 'todos' || props.forma_pagamento === selectedPagamento;
+
+                    let tipoMatch = false;
+                    if (selectedTipo === 'todos') {
+                        tipoMatch = true;
+                    } else if (selectedTipo === 'PRESENCIAL') {
+                        tipoMatch = (props.tipo_atendimento === 'PRESENCIAL' || props.tipo_atendimento === 'AMBOS');
+                    } else if (selectedTipo === 'ONLINE') {
+                        tipoMatch = (props.tipo_atendimento === 'ONLINE' || props.tipo_atendimento === 'AMBOS');
+                    } else {
+                        tipoMatch = props.tipo_atendimento === selectedTipo;
+                    }
+
+                    return regiaoMatch && pagamentoMatch && tipoMatch;
+                });
+
+                vectorSource.addFeatures(filteredFeatures);
+            }
+
+            regiaoFilter.addEventListener('change', applyFilters);
+            pagamentoFilter.addEventListener('change', applyFilters);
+            tipoFilter.addEventListener('change', applyFilters);
+
+            // --- LÓGICA DE CLIQUE PARA ABRIR O POP-UP (NOVO) ---
+            map.on('click', function (evt) {
+                const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
+                    return feature;
+                });
+                
+                if (feature) {
+                    // Se clicou em um marcador
+                    const coordinates = feature.getGeometry().getCoordinates();
+                    const props = feature.getProperties();
+                    
+                    // Monta o conteúdo do pop-up
+                    let popupHTML = `<h3>${props.nome}</h3>`;
+                    popupHTML += `<p><strong>Endereço:</strong> ${props.endereco}</p>`;
+                    if (props.contato) {
+                        popupHTML += `<p><strong>Contato:</strong> ${props.contato}</p>`;
+                    }
+                    if (props.site) {
+                        // Transforma o site em um link clicável
+                        popupHTML += `<p><strong>Site:</strong> <a href="${props.site}" target="_blank">${props.site}</a></p>`;
+                    }
+
+                    content.innerHTML = popupHTML;
+                    overlay.setPosition(coordinates);
+                } else {
+                    // Se clicou fora de um marcador, esconde o pop-up
+                    overlay.setPosition(undefined);
+                    closer.blur();
+                }
+            });
+
+            // --- LÓGICA PARA FECHAR O POP-UP (NOVO) ---
+            closer.onclick = function () {
+                overlay.setPosition(undefined);
+                closer.blur();
+                return false;
+            };
+        });
+    </script>
+
+        <footer>
+		<p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Oliveira</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
+		</footer>
+	</body>
+</html>

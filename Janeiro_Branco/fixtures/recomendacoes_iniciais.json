@@ -1,0 +1,38 @@
+[
+    {
+        "model": "Janeiro_Branco.recomendacao",
+        "pk": 1,
+        "fields": {
+            "nome_site_app": "Lojong",
+            "url": "https://lojongapp.com/",
+            "descricao": "Voltado para o treinamento cerebral, o app faz uso da técnica Mindfulness para proporcionar benefícios como alívio do estresse, controle da ansiedade, ampliação do foco e aumento da produtividade. Um dos destaques é o programa 'Dormir Bem', que traz uma variedade de medições para monitorar o seu sono.",
+            "data_envio": "2025-08-02T22:30:00.000Z",
+            "autor": 100,
+            "creditar_autor": true
+        }
+    },
+    {
+        "model": "Janeiro_Branco.recomendacao",
+        "pk": 2,
+        "fields": {
+            "nome_site_app": "Rootd",
+            "url": "https://www.rootd.io/",
+            "descricao": "A interface simples possui um botão vermelho que guia o usuário a dois caminhos distintos, conforme a situação momentânea. A promessa é de entregar conforto mental o mais rápido possível no enfrentamento a ataques. O programa tem integração com a agenda do aparelho e permite ligar imediatamente para um contato de confiança cadastrado.",
+            "data_envio": "2025-08-02T22:31:00.000Z",
+            "autor": 101,
+            "creditar_autor": true
+        }
+    },
+    {
+        "model": "Janeiro_Branco.recomendacao",
+        "pk": 3,
+        "fields": {
+            "nome_site_app": "Conversa Comigo",
+            "url": "https://www.conversacomigo.com.br/",
+            "descricao": "Voltado para a psicoeducação, traz conteúdos interativos para melhorar a saúde mental e emocional e permite conversar com especialistas. Estes, na verdade, são perfis programados por uma equipe de psicólogos da UERJ para interagir com respostas pré-elaboradas para dúvidas comuns.",
+            "data_envio": "2025-08-02T22:32:00.000Z",
+            "autor": 100,
+            "creditar_autor": false
+        }
+    }
+]

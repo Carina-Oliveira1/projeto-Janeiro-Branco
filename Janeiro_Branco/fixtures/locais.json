@@ -1,0 +1,418 @@
+[
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 1,
+        "fields": {
+            "nome": "IBP - Instituto Brasiliense de Psicologia",
+            "endereco": "SQN 112 Bloco C ap. 102, Brasília 70655775",
+            "contato": "(61) 99807-1973",
+            "site": "https://institutoibp.com.br/",
+            "regiao_administrativa": 1,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.750986470703856,
+            "longitude": -47.89085184429865
+        }
+    },
+
+     {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 2,
+        "fields": {
+            "nome": "Psicomed - Centro Integrado de Psicologia E Medicina Especializada",
+            "endereco": "SRTVN 701 Centro Empresarial Norte (Salas 437 e 436 Bloco B), Brasília 70719-903",
+            "contato": "(61) 99553-3741",
+            "site": "https://linktr.ee/psicomedbsb",
+            "regiao_administrativa": 1,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.784987697780286,
+            "longitude": -47.89020691673315
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 3,
+        "fields": {
+            "nome": "CDB - Clínica de Psicologia e Psicanálise",
+            "endereco": "SRTVN, Quadra 701, Conjunto C LT. 124, Brasília 70719903",
+            "contato": "(61) 99319-8668",
+            "site": "https://www.psicanalise-ipepp.com/atendimentos",
+            "regiao_administrativa": 1,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.785371346750434,
+            "longitude": -47.89042787220055
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 4,
+        "fields": {
+            "nome": "Clínica RBM de Fonoaudiologia e Psicologia Multidisciplinar",
+            "endereco": "St. de Grandes Áreas Norte 915 - Ed. Golden Office Corporate, bloco e, salas 101 a 106, Brasília 70790150",
+            "contato": "(61) 99123-1563",
+            "site": "https://clinicarbm.com.br/",
+            "regiao_administrativa": 1,
+            "tipo_atendimento": "PRESENCIAL",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.742725896549675,
+            "longitude": -47.901723902810275
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 5,
+        "fields": {
+            "nome": "Aliar Instituto Clinica de Psicologia",
+            "endereco": "Centro Clínico Cléo Octávio (entre o HRAN e o Hemocentro), Brasília 70710-146",
+            "contato": "(61) 9996-1418",
+            "site": "https://www.aliarpsicologia.com/",
+            "regiao_administrativa": 1,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "SOCIAL",
+            "latitude": -15.784048459482674,
+            "longitude": -47.88504813621416
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 6,
+        "fields": {
+            "nome": "IBP - Instituto Brasiliense de Psicologia",
+            "endereco": "Setor C Norte, QNC 23 Lote 1 a 12, Torre A Sala 1110, Ed. Prime Excelência Médica, Brasília 72115-700",
+            "contato": "(61) 99807-1973",
+            "site": "https://institutoibp.com.br/",
+            "regiao_administrativa": 2,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.822157493284056,
+            "longitude": -48.06628860449809
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 7,
+        "fields": {
+            "nome": "CLÍNICA SAÚDE INTEGRAL",
+            "endereco": "Edifício Trade Center - C1 Lote 01/12 Sala 701/702",
+            "contato": "(61) 98359-7373",
+            "site": "https://www.saudeintegralpsicologia.com.br/",
+            "regiao_administrativa": 2,
+            "tipo_atendimento": "PRESENCIAL",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.828821719539535,
+            "longitude": -48.054445107308766
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 8,
+        "fields": {
+            "nome": "Centro Neuro Cardiológico de Brasília",
+            "endereco": "Alameda Shopping Torre B Sala 719/724",
+            "contato": "(61) 99975-9162",
+            "site": "https://cncb.med.br/",
+            "regiao_administrativa": 2,
+            "tipo_atendimento": "PRESENCIAL",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.835925325105714,
+            "longitude": -48.056640117990085
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 9,
+        "fields": {
+            "nome": "Sanity Psicologia",
+            "endereco": "Ed. Pátio Capital, Torre Norte - Sl. 802, Taguatinga Sul, Brasília - DF, 71953-000",
+            "contato": "(61) 99112-6986",
+            "site": "https://sanitypsicologia.com.br/",
+            "regiao_administrativa": 2,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.84406010275883,
+            "longitude": -48.04418973518439
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 9,
+        "fields": {
+            "nome": "Especiale Centro Especializado em Psiquiatria e Endocrinologia Pediátrica",
+            "endereco": "A/E, Setor C Norte, Lote 1 a 12, Ed. Prime Excelência Médica, Torre A, Salas 705 a 708",
+            "contato": "(61) 99106-6579",
+            "site": "https://psiquiatra-taguatinga.med-br.com/",
+            "regiao_administrativa": 2,
+            "tipo_atendimento": "ONLINE",
+            "forma_pagamento": "SOCIAL",
+            "latitude": -15.822628966967239,
+            "longitude": -48.06630646984142
+        }
+    },
+    
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 10,
+        "fields": {
+            "nome": "IBP - Instituto Brasiliense de Psicologia",
+            "endereco": "Rua Copaíba lote 01 - S/N, Torre A, sala 2307, Brasília 71919-900",
+            "contato": "(61) 99807-1973",
+            "site": "https://institutoibp.com.br/",
+            "regiao_administrativa": 3,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.831326168267891,
+            "longitude": -48.04135459172465
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 11,
+        "fields": {
+            "nome": "Clinica RBM de Fonoaudiologia e Psicologia Multidisciplinar",
+            "endereco": "Avenida Jacarandá 47, bloco a, lote 1/2, Brasília 71927540",
+            "contato": "(61) 99916-6234",
+            "site": "https://clinicarbm.com.br/",
+            "regiao_administrativa": 3,
+            "tipo_atendimento": "PRESENCIAL",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.845358145898823,
+            "longitude": -48.0316935036441
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 12,
+        "fields": {
+            "nome": "Simone Angélica Amorim Psicóloga",
+            "endereco": "Espaço Saúde - Av. Pau Brasil, Lote 6, Sala 1908. Edifício E-Business - 71916-500",
+            "contato": "(61) 99101-4293",
+            "site": "https://simoneamorimpsi.com.br/",
+            "regiao_administrativa": 3,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "SOCIAL",
+            "latitude": -15.837866248035027,
+            "longitude": -48.027530677093786
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 13,
+        "fields": {
+            "nome": "Luminnus Psicologia",
+            "endereco": "Distrito Federal, Ed. E Business - Av. Pau Brasil, Sala 1610 - Águas Claras, Brasília - DF, 71916-500",
+            "contato": "(61) 98112-2247",
+            "site": "https://luminnuspsicologia.com.br/",
+            "regiao_administrativa": 3,
+            "tipo_atendimento": "PRESENCIAL",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.838866785077446,
+            "longitude": -48.027201000047114
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 14,
+        "fields": {
+            "nome": "Clinica Florescer",
+            "endereco": "QS 1 LED Office, Torre 2 Sala 401 - Taguatinga, Brasília - DF, 70297-400",
+            "contato": "(61) 98350-4767",
+            "site": "https://clinicaflorescerdf.com.br/",
+            "regiao_administrativa": 3,
+            "tipo_atendimento": "PRESENCIAL",
+            "forma_pagamento": "SOCIAL",
+            "latitude": -15.839144670026979,
+            "longitude": -48.044659207967385
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 15,
+        "fields": {
+            "nome": "Clinica RBM de Fonoaudiologia e Psicologia Multidisciplinar",
+            "endereco": "QNSW 6, Lote 11/12. Consultórios Médicos Brasília. Primeiro andar, consultório 28., Brasília 70680643",
+            "contato": "(61) 99698-9541",
+            "site": "https://clinicarbm.com.br/",
+            "regiao_administrativa": 4,
+            "tipo_atendimento": "PRESENCIAL",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.793703535165113,
+            "longitude": -47.9210912447439
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 16,
+        "fields": {
+            "nome": "Apsivida Psicologia Integrada",
+            "endereco": "CLSW 303 Bloco C - Ed. Le Parc Sala 13 Sudoeste, Brasília DF, Brasília 70297400",
+            "contato": "(61) 98554-6231",
+            "site": "https://www.apsivida.com/",
+            "regiao_administrativa": 4,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.748042258531418,
+            "longitude": -47.88475062548952
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 17,
+        "fields": {
+            "nome": "CLÍNICA ASSIN - ASSISTÊNCIA SAÚDE INTEGRADA",
+            "endereco": "Setor Sudoeste Lotes 3/4/5 Sala 156, St. Sudoeste, Brasília - DF, 70673-416",
+            "contato": "(61) 98241-5515",
+            "site": "https://clinicaassin.com.br/",
+            "regiao_administrativa": 4,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.801174260728649,
+            "longitude": -47.93237651572024
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 18,
+        "fields": {
+            "nome": "CLÍNICA NPB - NEUROLOGIA E PSIQUIATRIA BRASÍLIA",
+            "endereco": "SHCSW Blocos 3/4/5 Sala 222 - Centro Clínico Sudoeste, St. Sudoeste, Brasília - DF, 70673-416",
+            "contato": "(61) 99620-5088",
+            "site": "https://clinicanpb.com.br/",
+            "regiao_administrativa": 4,
+            "tipo_atendimento": "PRESENCIAL",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.797154660390454,
+            "longitude": -47.91608862000886
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 19,
+        "fields": {
+            "nome": "ESPAÇO SERENITAS",
+            "endereco": "St. Sudoeste lotes 3/4/5 CENTRO CLÍNICO SUDOESTE SALA 227 - Cruzeiro / Sudoeste / Octogonal, Brasília - DF, 70297-400",
+            "contato": "(61) 3551-7078",
+            "site": "https://www.espacoserenitas.com.br/",
+            "regiao_administrativa": 4,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.801896898771306,
+            "longitude": -47.93236578650755
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 20,
+        "fields": {
+            "nome": "Sanity Psicologia",
+            "endereco": "Saúde Centro Clínico, Sls 303-304 Ceilândia Brasília - DF, 72215-178",
+            "contato": "(61) 99244-4282",
+            "site": "https://sanitypsicologia.com.br/",
+            "regiao_administrativa": 5,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.817068673575674,
+            "longitude": -48.1025191691541
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 21,
+        "fields": {
+            "nome": "Clínica PSIQ",
+            "endereco": "QNM 17 Conj H Lote 46 Sala 104 Ed. Vida Medical Center Ceilândia/DF",
+            "contato": "(61) 98257-4393",
+            "site": "https://www.psiqclinicas.com.br/",
+            "regiao_administrativa": 5,
+            "tipo_atendimento": "PRESENCIAL",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.81590452960582,
+            "longitude": -48.09715693068679
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 22,
+        "fields": {
+            "nome": "Clinica Doutor Certo",
+            "endereco": "QNM 04 Conjunto O Lote 44 Ceilândia centro",
+            "contato": "(61) 99267-6666",
+            "site": "https://doutorcerto.site-br.net/psicologia-ceilandia/",
+            "regiao_administrativa": 5,
+            "tipo_atendimento": "PRESENCIAL",
+            "forma_pagamento": "INTEIRO",
+            "latitude": -15.813963844772427,
+            "longitude": -48.1067624
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 23,
+        "fields": {
+            "nome": "New Clinica de Psicologia",
+            "endereco": "QNM 17 conjunto H lote 46 sala 404 Edifício Vida Medical Center",
+            "contato": "(61) 3371-1184",
+            "site": "https://www.newpsicologia.com/",
+            "regiao_administrativa": 5,
+            "tipo_atendimento": "PRESENCIAL",
+            "forma_pagamento": "SOCIAL",
+            "latitude": -15.816069692220116,
+            "longitude": -48.09706037116416
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 24,
+        "fields": {
+            "nome": "Centro de Atendimento e Estudos Psicológicos - CAEP",
+            "endereco": "Campus Universitário Darcy Ribeiro CEP: 70.910-900",
+            "contato": "(61) 3107-1680",
+            "site": "http://caep.unb.br/",
+            "regiao_administrativa": 6,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "GRATUITO",
+            "latitude": -15.765575129010646,
+            "longitude": -47.87211073125199
+        }
+    },
+
+    {
+        "model": "Janeiro_Branco.localatendimento",
+        "pk": 25,
+        "fields": {
+            "nome": "Centro Universitário IESB",
+            "endereco": "SGAS, Quadra 613/614 - Asa Sul, Brasília - DF, 70200-730",
+            "contato": "(61) 33403747",
+            "site": "https://www.iesb.br/comunidade/",
+            "regiao_administrativa": 6,
+            "tipo_atendimento": "AMBOS",
+            "forma_pagamento": "GRATUITO",
+            "latitude": -15.83554632865163,
+            "longitude": -47.91383840009415
+        }
+    }
+    
+]

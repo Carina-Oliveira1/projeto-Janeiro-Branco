@@ -1,0 +1,57 @@
+[
+    {
+        "model": "Janeiro_Branco.mensagem",
+        "pk": 1,
+        "fields": {
+            "conteudo": "Lembre-se: sentir-se perdido às vezes é normal. Cada passo, por menor que seja, é um progresso. Você não está sozinho(a) nisso.",
+            "data_criacao": "2025-08-02T22:22:00.000Z",
+            "autor": 100,
+            "exibir_anonimo": true,
+            "esta_visivel": true
+        }
+    },
+    {
+        "model": "Janeiro_Branco.mensagem",
+        "pk": 2,
+        "fields": {
+            "conteudo": "Pedir ajuda é um ato de coragem, não de fraqueza. Falar sobre o que sentimos é o primeiro passo para a cura.",
+            "data_criacao": "2025-08-02T22:23:00.000Z",
+            "autor": 101,
+            "exibir_anonimo": true,
+            "esta_visivel": true
+        }
+    },
+    {
+        "model": "Janeiro_Branco.mensagem",
+        "pk": 3,
+        "fields": {
+            "conteudo": "Para quem estiver lendo isso: você é mais forte do que pensa e mais capaz do que imagina. Continue firme, um dia de cada vez.",
+            "data_criacao": "2025-08-02T22:24:00.000Z",
+            "autor": 100,
+            "exibir_anonimo": true,
+            "esta_visivel": true
+        }
+    },
+    {
+        "model": "Janeiro_Branco.mensagem",
+        "pk": 4,
+        "fields": {
+            "conteudo": "Tire um tempo para você hoje, mesmo que sejam apenas 5 minutos para respirar fundo. O autocuidado não é egoísmo, é uma necessidade para recarregar as energias.",
+            "data_criacao": "2025-08-02T22:25:00.000Z",
+            "autor": 100,
+            "exibir_anonimo": false,
+            "esta_visivel": true
+        }
+    },
+    {
+        "model": "Janeiro_Branco.mensagem",
+        "pk": 5,
+        "fields": {
+            "conteudo": "Dias ruins vêm e vão. Eles não definem quem você é nem o seu futuro. Permita-se sentir, mas não se esqueça da sua força para superar os desafios.",
+            "data_criacao": "2025-08-02T22:26:00.000Z",
+            "autor": 101,
+            "exibir_anonimo": false,
+            "esta_visivel": true
+        }
+    }
+]

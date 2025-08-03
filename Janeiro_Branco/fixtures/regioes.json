@@ -1,0 +1,8 @@
+[
+    { "model": "Janeiro_Branco.regiaoadministrativa", "pk": 1, "fields": { "nome": "Asa Norte" } },
+    { "model": "Janeiro_Branco.regiaoadministrativa", "pk": 2, "fields": { "nome": "Taguatinga" } },
+    { "model": "Janeiro_Branco.regiaoadministrativa", "pk": 3, "fields": { "nome": "Águas Claras" } },
+    { "model": "Janeiro_Branco.regiaoadministrativa", "pk": 4, "fields": { "nome": "Sudoeste" } },
+    { "model": "Janeiro_Branco.regiaoadministrativa", "pk": 5, "fields": { "nome": "Ceilândia" } },
+    { "model": "Janeiro_Branco.regiaoadministrativa", "pk": 6, "fields": { "nome": "Asa Sul" } }
+]

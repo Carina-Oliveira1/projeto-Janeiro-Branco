@@ -1,7 +1,7 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CustomUserCreationForm, RecomendacaoForm, MensagemForm
-from .models import Recomendacao, Mensagem
+from .models import Recomendacao, Mensagem, LocalAtendimento, RegiaoAdministrativa
 from django.contrib.auth.decorators import login_required
 
 def index(request):
@@ -10,17 +10,11 @@ def index(request):
 def forum(request):
     return render(request, 'Janeiro_Branco/forum.html')
 
-def login(request):
-    return render(request, 'Janeiro_Branco/login.html')
-
 def onde_encontrar_ajuda(request):
     return render(request, 'Janeiro_Branco/onde_encontrar_ajuda.html')
 
 def somos(request):
     return render(request, 'Janeiro_Branco/somos.html')
-
-def cadastro(request):
-    return render(request, 'Janeiro_Branco/cadastro.html')
 
 def cadastro(request):
     #essa linha verifica se o usuário está *enviando* o formulário (método POST)
@@ -114,3 +108,45 @@ def deletar_mensagem(request, mensagem_id):
         mensagem.esta_visivel = False
         mensagem.save()
     return redirect('forum')
+
+def mapa_view(request):
+    """Apenas renderiza a página que conterá o mapa."""
+    regioes = RegiaoAdministrativa.objects.all()
+    contexto = {
+        'regioes': regioes,
+        'tipos_atendimento': LocalAtendimento.TipoAtendimento.choices,
+        'formas_pagamento': LocalAtendimento.FormaPagamento.choices
+    }
+    return render(request, 'Janeiro_Branco/mapa.html', contexto)
+
+
+def locais_api(request):
+    """Esta é a API que o JavaScript vai chamar."""
+    locais = LocalAtendimento.objects.all().select_related('regiao_administrativa')
+    
+    # Transforma os objetos do Django em um formato que o JSON entende
+    features = []
+    for local in locais:
+        features.append({
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [local.longitude, local.latitude]
+            },
+            "properties": {
+                "id": local.pk,
+                "nome": local.nome,
+                "endereco": local.endereco,
+                "contato": local.contato,
+                "site": local.site,
+                "regiao": local.regiao_administrativa.nome,
+                "tipo_atendimento": local.tipo_atendimento,
+                "forma_pagamento": local.forma_pagamento
+            }
+        })
+    
+    data = {
+        "type": "FeatureCollection",
+        "features": features
+    }
+    return JsonResponse(data)
