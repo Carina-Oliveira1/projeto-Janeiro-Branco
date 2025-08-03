@@ -46,7 +46,7 @@ A aplicação foi construída utilizando um conjunto de tecnologias modernas, se
     * `JSON (JavaScript Object Notation)`: Utilizado para criar os fixtures do Django. Esses arquivos (.json) contêm os dados iniciais (usuários falsos, locais de atendimento, mensagens do fórum e recomendações) que são carregados no banco de dados para que a aplicação já comece com conteúdo pré-definido.
 
 * **Banco de Dados:**
-    * `PostgreSQL`: : Sistema de gerenciamento de banco de dados objeto-relacional de código aberto, robusto e escalável.
+    * `PostgreSQL`: Sistema de gerenciamento de banco de dados objeto-relacional de código aberto, robusto e escalável.
 
 ## 🚀 Como Acessar a Parte Estática do Projeto
 * **Acesse:** (https://carina-oliveira1.github.io/projeto-Janeiro-Branco/)
