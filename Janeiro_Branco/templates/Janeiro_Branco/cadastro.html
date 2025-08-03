@@ -28,8 +28,9 @@
                         <li class="nav-item dropdown"> <a href="#">Explore &#9662;</a> 
                             <ul class="dropdown-menu">
                                 <li><a href="{% url 'forum' %}">Fórum</a></li>
-                                <li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
-                                <li><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
+								<li><a href="{% url 'mapa' %}">Mapa de Atendimento Psicológico</a></li>
+								<li><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
+								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a href="{% url 'somos' %}">Somos</a></li>
@@ -86,7 +87,35 @@
     </main>
 
         <footer>
-            <p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Oliveira</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
-        </footer>
+			<div class="footer-container">
+				<div class="footer-about">
+					<a href="{% url 'index' %}" class="footer-logo">
+						<img src="{% static 'Janeiro_Branco/img/fita.png' %}" alt="Laço Janeiro Branco">
+						<h4>Janeiro Branco</h4>
+					</a>
+					<p>Um espaço dedicado à conscientização sobre a importância da saúde mental. Quem cuida da mente, cuida da vida.</p>
+				</div>
+			
+				<div class="footer-links">
+					<h4>Navegação</h4>
+					<ul>
+						<li><a href="{% url 'index' %}">Início</a></li>
+						<li><a href="{% url 'index' %}#o-que-e">O Que É</a></li>
+						<li><a href="{% url 'forum' %}">Fórum</a></li>
+						<li><a href="{% url 'somos' %}">Quem Somos</a></li>
+					</ul>
+				</div>
+			
+				<div class="footer-credits">
+					<h4>Desenvolvido Por</h4>
+					<p>Carina Oliveira</p>
+					<p>Diego Costa</p>
+					<a href="{% url 'somos' %}" class="footer-button">Conheça a Equipe</a>
+				</div>
+			</div>
+			<div class="footer-bottom-bar">
+				<p>© 2025 Janeiro Branco. Todos os direitos reservados.</p>
+			</div>
+		</footer>
     </body>
 </html>

@@ -28,8 +28,9 @@
 						<li class="nav-item dropdown"> <a href="#">Explore &#9662;</a> 
 							<ul class="dropdown-menu">
 								<li><a href="{% url 'forum' %}">Fórum</a></li>
-								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
+								<li><a href="{% url 'mapa' %}">Mapa de Atendimento Psicológico</a></li>
 								<li><a href="{% url 'listar_recomendacoes' %}">Recomendações</a></li>
+								<li><a href="{% url 'onde_encontrar_ajuda' %}">Onde encontrar ajuda</a></li>
 							</ul>
 						</li>
 						<li class="nav-item"><a href="{% url 'somos' %}" class="login-button">Somos</a></li>
@@ -50,43 +51,47 @@
             <section id="somos">
                 <div class="somos-titulo-container">
                     <h2>QUEM SOMOS</h2>
-                    <p>Somos estudantes de Análise e Desenvolvimento de Sistemas apaixonados por tecnologia e bem-estar. Criamos este espaço como um projeto para a matéria de Programação Web, com o objetivo de usar nossas habilidades para promover a conscientização sobre a saúde mental.</p>
+                    <p>Somos estudantes do curso Técninco em Desenvolvimento de Sistemas no Instituto Federal de Brasília. Criamos este espaço como um projeto para a matéria de Desenvolvimento de Sistemas WEB, com o tema "Vozes das Cores" que surgiu a partir da campanha "Cores do mês". Escolhemos o Janeiro Branco com o objetivo de usar nossas habilidades para promover a conscientização sobre a saúde mental.</p>
                 </div>
 
                 <div class="desenvolvedores-grid">
                     <div class="desenvolvedor-card">
-                        <div class="desenvolvedor-img">
-                            <img src="img/placeholder-dev.png" alt="Foto da Carina Santos">
-                        </div>
                         <div class="desenvolvedor-info">
-                            <h3>Carina Santos</h3>
+                            <h3>Carina Oliveira</h3>
                             <p>
                                 (Aqui você pode escrever um pouco sobre você, seu papel no projeto, suas motivações e o que você mais gostou de desenvolver. Fale sobre suas paixões e como a tecnologia pode ajudar causas como o Janeiro Branco.)
                             </p>
-                            <a href="https://github.com/Carina-Oliveira1" target="_blank" class="dev-link" title="Perfil no GitHub">
-							    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
-							        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-							    </svg>
-							    <span>GitHub</span>
-							</a>
+                            <div class="dev-links-container">
+							    <a href="https://github.com/Carina-Oliveira1" target="_blank" class="dev-link" title="Perfil no GitHub">
+							        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+							        <span>GitHub</span>
+							    </a>
+							
+							    <a href="https://www.linkedin.com/in/carina-oliveira-be/" target="_blank" class="dev-link" title="Perfil no LinkedIn">
+							        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50" fill="currentColor"><path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-3.56,5.66-3.56 C36.45,19,39,22.55,39,29V39z"></path></svg>
+							        <span>LinkedIn</span>
+							    </a>
+							</div>
                         </div>
                     </div>
 
                     <div class="desenvolvedor-card">
-    					<div class="desenvolvedor-img">
-    					    <img src="img/perfil.png" alt="Foto do Diego Costa">
-    					</div>
     					<div class="desenvolvedor-info">
     					    <h3>Diego Costa</h3>
     					    <p>
     					        Como futuro profissional de tecnologia e entusiasta de projetos com propósito, abraçar a causa do Janeiro Branco foi muito gratificante. Este site nasceu de um desafio acadêmico, mas se tornou uma missão de usar a programação para disseminar informação e quebrar estigmas sobre a saúde mental. Espero que nosso trabalho aqui sirva como uma fonte de apoio e conhecimento, mostrando que cuidar da mente é fundamental.
     					    </p>
-    					    <a href="https://github.com/DiegoCCosta" target="_blank" class="dev-link" title="Perfil no GitHub">
-    					        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
-    					            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-    					        </svg>
-    					        <span>GitHub</span>
-    					    </a>
+    					   <div class="dev-links-container">
+							    <a href="https://github.com/DiegoCCosta" target="_blank" class="dev-link" title="Perfil no GitHub">
+							        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+							        <span>GitHub</span>
+							    </a>
+							
+							    <a href="https://www.linkedin.com/in/diego-da-concei%C3%A7%C3%A3o-costa-469038230/" target="_blank" class="dev-link" title="Perfil no LinkedIn">
+							        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50" fill="currentColor"><path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-3.56,5.66-3.56 C36.45,19,39,22.55,39,29V39z"></path></svg>
+							        <span>LinkedIn</span>
+							    </a>
+							</div>
     					</div>
 					</div>
                 </div>
@@ -94,7 +99,35 @@
         </main>
 
 		<footer>
-		<p>Desenvolvido por <a href="https://github.com/Carina-Oliveira1" target="_blank">Carina Oliveira</a> e <a href="https://github.com/DiegoCCosta" target="_blank">Diego Costa</a> - 2025</p>
+			<div class="footer-container">
+				<div class="footer-about">
+					<a href="{% url 'index' %}" class="footer-logo">
+						<img src="{% static 'Janeiro_Branco/img/fita.png' %}" alt="Laço Janeiro Branco">
+						<h4>Janeiro Branco</h4>
+					</a>
+					<p>Um espaço dedicado à conscientização sobre a importância da saúde mental. Quem cuida da mente, cuida da vida.</p>
+				</div>
+			
+				<div class="footer-links">
+					<h4>Navegação</h4>
+					<ul>
+						<li><a href="{% url 'index' %}">Início</a></li>
+						<li><a href="{% url 'index' %}#o-que-e">O Que É</a></li>
+						<li><a href="{% url 'forum' %}">Fórum</a></li>
+						<li><a href="{% url 'somos' %}">Quem Somos</a></li>
+					</ul>
+				</div>
+			
+				<div class="footer-credits">
+					<h4>Desenvolvido Por</h4>
+					<p>Carina Oliveira</p>
+					<p>Diego Costa</p>
+					<a href="{% url 'somos' %}" class="footer-button">Conheça a Equipe</a>
+				</div>
+			</div>
+			<div class="footer-bottom-bar">
+				<p>© 2025 Janeiro Branco. Todos os direitos reservados.</p>
+			</div>
 		</footer>
 	</body>
 </html>

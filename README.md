@@ -25,9 +25,8 @@ O projeto conta com as seguintes funcionalidades:
 * **Página Informativa:** Uma página inicial que apresenta a campanha, explica a importância da campanha, seus objetivos e informações gerais sobre saúde mental.
 * **Forúm de Apoio:** Uma seção dinâmica onde são exibidas todas as mensagens de apoio enviadas pelos usuários, ordenadas da mais recente para a mais antiga.
 * **Formulário de Envio:** Um formulário simples e seguro para que qualquer pessoa possa enviar sua mensagem, com a opção de se identificar ou permanecer anônima.
-* **Sites e Aplicativos de Apoio:** Seção onde o usuário pode encontrar sites e aplicativos de apoio e produtividade.
 * **Recomendações dos usuários:** Espaço para usuários enviarem as próprias recomendações de sites e aplicativos voltados a saúde mental.
-* **Mapa de procura por atendimento piscológico:** Seção onde os usuários e visitantes poderão encontrar unidades de ajuda psicológica dentro da região de Brasília, podendo filtrar os resultados por região admnistrativa, preço e formato (presencial ou online). O usuário também poderá escolher se quer ser notificado caso uma nova unidade de atendimento seja adicionada na região administrativa de preferência.
+* **Mapa de procura por atendimento piscológico:** Seção onde os usuários e visitantes poderão encontrar unidades de ajuda psicológica dentro da região de Brasília, podendo filtrar os resultados por região admnistrativa, preço e formato (presencial ou online).
 
 
 ## 💻 Tecnologias Utilizadas
@@ -37,6 +36,7 @@ A aplicação foi construída utilizando um conjunto de tecnologias modernas, se
 * **Front-end (Interface do Usuário):**
     * `HTML5`: Para a estruturação semântica do conteúdo.
     * `CSS3`: Para a estilização, layout e design responsivo, seguindo a identidade visual do Agosto Lilás.
+    * `JavaScript`: Para a implementação da API de mapa OpenLayers.
 
 * **Back-end (Lógica do Servidor):**
     * `Python 3`: Linguagem principal para toda a lógica da aplicação.
@@ -128,14 +128,30 @@ Antes de começar, certifique-se de que você tem os seguintes softwares instala
         ```bash
         python manage.py migrate
         ```
+6. **Carregar Dados Iniciais (Fixtures)**
 
-6.  **Inicie o servidor Django:**
+  Para que a aplicação já comece com conteúdo no mapa, fórum e recomendações, carregue os dados iniciais. A ordem dos comandos é importante!
+
+        
+        # Carrega os usuários e regiões primeiro
+        python manage.py loaddata usuarios_iniciais
+        python manage.py loaddata regioes
+
+        # Depois, carrega os dados que dependem dos anteriores
+        python manage.py loaddata locais
+        python manage.py loaddata mensagens_iniciais
+        python manage.py loaddata recomendacoes_iniciais
+        
+  
+
+
+7.  **Inicie o servidor Django:**
     Agora, sua aplicação está pronta para ser executada!
     ```bash
     python manage.py runserver
     ```
 
-7.  **Acesse a aplicação:**
+8.  **Acesse a aplicação:**
     Abra seu navegador de internet e acesse a seguinte URL:
     [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
@@ -153,6 +169,13 @@ Projeto_Janeiro_Branco/
 │   ├── urls.py                  # URLs globais
 │   └── wsgi.py
 ├── janeiro_branco/              # Aplicativo principal do projeto
+│   ├── fixtures/	# Dados iniciais para o banco (usuários, mapa, fórum)
+│   │  ├── usuarios_iniciais.json	
+│   │  ├── regioes.json	
+│   │  ├── locais.json	
+│   │  ├── mensagens_iniciais.json	
+│   │  └── recomendacoes_iniciais.json	
+│   ├── migrations/	             # Migrações do banco de dados
 │   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
@@ -187,23 +210,77 @@ Projeto da disciplina Desenvolvimento de Sistema Web, do curso de Tecnologia em 
 
 ```mermaid
 graph TD
-    A[Usuário] -->|Navega para URL| B(Django URL Routing);
-    B -->|Chama a View correspondente| C(View);
-    C -->|Consulta/Atualiza dados| D(Model);
-    D -->|Retorna dados| C;
-    C -->|Renderiza o Template com os dados| E(Template);
-    E -->|Gera HTML| C;
-    C -->|Retorna resposta HTTP| A;
-
-    subgraph "Projeto Janeiro Branco"
-        E["Template (Apresentação)<br>HTML5, CSS3<br>templates/Janeiro_Branco/"];
-        C["View (Lógica/Controller)<br>Python 3, Django<br>Janeiro_Branco/views.py"];
-        D["Model (Dados)<br>PostgreSQL<br>Janeiro_Branco/models.py"];
+    subgraph "Usuário"
+        direction LR
+        A[Visitante/Usuário]
     end
 
-    style E fill:#0C4B33,stroke:#ffffff,stroke-width:2px,color:#fff
-    style C fill:#0C4B33,stroke:#ffffff,stroke-width:2px,color:#fff
-    style D fill:#0C4B33,stroke:#ffffff,stroke-width:2px,color:#fff
+    subgraph "Django (Controller/View)"
+        direction LR
+        B(URL Routing)
+        C_Forum["View: Fórum"]
+        C_Recomendacao["View: Recomendações"]
+        C_Mapa["View: Mapa"]
+        C_API["View: API de Locais (JSON)"]
+    end
+
+    subgraph "Django (Model)"
+        direction LR
+        D_Msg[Model: Mensagem]
+        D_Rec[Model: Recomendacao]
+        D_Local[Model: LocalAtendimento]
+        D_User[Model: User]
+    end
+
+    subgraph "Django (Template)"
+        direction LR
+        E_Forum[Template: forum.html]
+        E_Rec[Template: recomendacoes.html]
+        E_Mapa[Template: mapa.html]
+    end
+
+    subgraph "Banco de Dados"
+        DB[(PostgreSQL)]
+    end
+    
+    subgraph "Cliente (Navegador)"
+        JS[JavaScript: OpenLayers]
+    end
+
+    %% Fluxos de Interação
+    A -- "Acessa /forum/" --> B
+    A -- "Acessa /recomendacoes/" --> B
+    A -- "Acessa /mapa/" --> B
+    
+    B -- "/forum/" --> C_Forum
+    B -- "/recomendacoes/" --> C_Recomendacao
+    B -- "/mapa/" --> C_Mapa
+    B -- "/api/locais/" --> C_API
+
+    C_Forum -- "Busca/Salva Mensagens" --> D_Msg
+    C_Recomendacao -- "Busca/Salva Recomendações" --> D_Rec
+    C_Mapa -- "Renderiza Página" --> E_Mapa
+    C_API -- "Busca Locais" --> D_Local
+
+    D_Msg -- "Associado a" --> D_User
+    D_Rec -- "Associado a" --> D_User
+    
+    D_Msg <--> DB
+    D_Rec <--> DB
+    D_Local <--> DB
+    D_User <--> DB
+
+    C_Forum -- "Renderiza com dados" --> E_Forum
+    C_Recomendacao -- "Renderiza com dados" --> E_Rec
+    
+    E_Forum -- "Exibe HTML" --> A
+    E_Rec -- "Exibe HTML" --> A
+    E_Mapa -- "Exibe HTML" --> A
+    
+    E_Mapa -- "Contém" --> JS
+    JS -- "Requisita dados via fetch()" --> C_API
+    C_API -- "Retorna JSON" --> JS
+    JS -- "Desenha pontos no mapa" --> E_Mapa
 ```
 
 A imagem do modelo MVC do Projeto Janeiro Branco foi gerada usando a ferramenta de inteligência artificial: Gemini.
